@@ -4,11 +4,12 @@ var Op = Sequelize.Op;
 module.exports = function (app) {
   // Get all idioms
   app.get("/api/idioms", function (req, res) {
-    db.Language.findAll({})
+    db.Idiom.findAll({})
       .then(function (idioms) {
-        res.json(idioms);
+        res.status(200).json(idioms);
       })
       .catch(function (err) {
+        console.log("ERRRRRRRRRRRR");
         console.log(err);
         res.send(err);
       });
@@ -109,7 +110,7 @@ module.exports = function (app) {
     db.Language.findAll({})
       .then(function (languages) {
         console.log("Retrieved: " + languages);
-        res.json(languages);
+        res.status(200).json(languages);
       })
       .catch(function (err) {
         res.send(err);
