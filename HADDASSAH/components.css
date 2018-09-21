@@ -1,0 +1,12 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.roundButton {
+    border-radius: 12px;
+    background-color: #35acbd !important;
+}
+
+.jumbotron {
+width: 100%;
+}
