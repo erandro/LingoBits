@@ -1,7 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
     var Link = sequelize.define("Link", {
         rating: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         }
     });
 
