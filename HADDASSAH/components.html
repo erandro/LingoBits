@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto+Slab:100,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="components.css" />
 </head>
 
@@ -15,7 +17,7 @@
 
 
     <!-- Search By Language Drop Down -->
-    <div class="container jumbotron ">
+    <div class="container jumbotron">
         <div class="card-deck justify-content-center">
             <div class="input-group">
                 <select class="custom-select" id="inputGroupSelect04">
@@ -38,29 +40,27 @@
             </div>
         </div>
         <!-- Top 3 Languages Buttons-->
-        <div class="container">
-            <div class="card-deck justify-content-center">
-                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topLangOne" class="card-title">عربى</h1>
-                    </div>
-                </div>
-                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topLangTwo" class="card-title">עִברִית</h1>
-                    </div>
-                </div>
-                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topLangThree" class="card-title">Tagalog</h1>
-                    </div>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2" style="background-color: #35acbd !important;">עִברִית
+                </button>
+            </div>
+
+            <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2" style="background-color: #35acbd !important;">Tagalog
+                </button>
+            </div>
+            <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2" style="background-color: #35acbd !important;">عربى
+                </button>
             </div>
         </div>
     </div>
+    </div>
+    </div>
 
     <!-- Search By Topic -->
-    <div class="container jumbotron ">
+    <div class="container jumbotron">
         <div class="card-deck justify-content-center">
             <div class="input-group">
                 <select class="custom-select" id="inputGroupSelect04">
@@ -72,7 +72,7 @@
                 </select>
                 <div class="input-group-append">
                     <button class="searchByTopic btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
-                        type="button">Search by Topic</button>
+                        type="button ">Search by Topic</button>
                 </div>
             </div>
         </div>
@@ -83,43 +83,42 @@
             </div>
         </div>
         <!-- Top 3 Topic Buttons-->
-        <div class="container jumbotron">
-            <div class="card-deck justify-content-center">
-                <div class="topTopic card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topTopicOne" class="card-title">Sayings</h1>
-                    </div>
+        <div class="container jumbotron justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Sayings
+                    </button>
                 </div>
-                <div class="topTopic card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topTopicTwo" class="card-title">Family</h1>
-                    </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Family
+                    </button>
                 </div>
-                <div class="topTopice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
-                    <div class="card-body">
-                        <h1 id="topTopicThree" class="card-title">Food</h1>
-                    </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Food
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
     <!-- Result Card -->
     <div class="container">
         <div class="card-deck justify-content-center">
-            <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 60rem; background-color: #35acbd !important;">
+            <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #35acbd !important;">
                 <div class="card-header" style=" background-color: #257884">
                     <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
                 </div>
-
                 <!-- commented out code if want info side by side -->
                 <!-- <div class="wrapper justify-content-center">
                     <div class="heading" style="font-weight: bold">Pronunciation: </div>
                     <div class="content">
                         <div id="pronunciation">"boo-en proh-veh-chow"</div>
                     </div>
-
                     <div class="wrapper justify-content-center">
                         <div class="heading" style="font-weight: bold">Literal Translation: </div>
                         <div class="content">
@@ -133,8 +132,6 @@
                             <div id="meaning">Enjoy your meal!</div>
                         </div>
                     </div> -->
-
-
                 <div class="card-body justify-content-center">
                     <p class="card-title" style="font-weight: bold">Pronunciation:</p>
                     <p id="pronunciation">"boo-en proh-veh-chow"</p>
@@ -148,6 +145,10 @@
                     <p class="card-title" id="connectionOne">Hebrew</p>
                     <p class="card-title" id="connectionTwo">Arabic</p>
                     <p class="card-title" id="connectionThree">French</p>
+                </div>
+                <i class="fas fa-plus-circle justify-content-right"></i>
+                <div class="container">
+                    <h1></h1>
                 </div>
             </div>
         </div>
@@ -189,6 +190,10 @@
         </div>
     </div> -->
 
+
+
+    <!-- JAVASCRIPT BELOW -->
+    <!-- 
     <script type="text/javascript">
 
         $(".getIdioms").on("click", function () {
@@ -219,7 +224,7 @@
                 }
             );
         });
-    </script>
+    </script> -->
 
     <!-- buttons display if there is data in the db and they have the 3 most amount of data -->
 

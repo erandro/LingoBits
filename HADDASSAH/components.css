@@ -2,14 +2,11 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
-.heading, .content {
-    width: 50%;
-    float: left;
+.roundButton {
+    border-radius: 12px;
+    background-color: #35acbd !important;
 }
-.heading {
-   text-align: right;
-} 
 
-.content div {
-    margin-left: 10px;
+.jumbotron {
+width: 100%;
 }
