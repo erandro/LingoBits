@@ -42,7 +42,7 @@ $(document).ready(function () {
       // we should have the add button have an id of the idiom  
       var id = $(this).data("id");
       hideAndShow("#home_page_div", "#add_idiom_div");
-      $(".submit_button").attr("data-id", id)
+      $(".submit_button").attr("data-id", id);
     });
 
     // ajax calls:
