@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "idiomsdb",
+    "database": "idioms_db",
     "host": "localhost",
     "dialect": "mysql"
   },
