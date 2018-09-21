@@ -10,9 +10,14 @@ module.exports = function (app) {
 
   // Create a new idiom
   app.post("/api/idioms", function (req, res) {
-    return res.json({});
-    // db.Example.create(req.body).then(function(dbExample) {
-    //   res.json(dbExample);
+    var idiom = req.body;
+    db.Idiom.create(idiom)
+      .then(function (idiom) {
+        res.json(idiom);
+      })
+      .catch(function (err) {
+        res.send(err);
+      });
   });
 
   // Create a new language
