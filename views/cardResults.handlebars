@@ -1,0 +1,80 @@
+{{!-- Result without table --}}
+{{#each result}}
+<div class="card-deck justify-content-center">
+    <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 20rem; background-color: #35acbd !important;">
+        <div class="card-body justify-content-center">
+            <h3 class="card-title" {{OrigIdiom}}></h3>
+            <h5 class="card-title" {{pronunciation}}></h5>
+            <p class="card-text" {{literalTrans}}></p>
+            <p class="card-text" {{meaning}}></p>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+{{!-- Just some space for my 👀 --}}
+<div class="container jumbotron">
+    <h1></h1>
+</div>
+
+{{!-- Result with Table--}}
+{{#each result}}
+<div class="container">
+    <div class="card-deck justify-content-center">
+        <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 60rem; background-color: #35acbd !important;">
+            <div class="card-header" style=" background-color: #257884">
+                <h1 class="card-title" id="OrigIdiom">{{OrigIdiom}}</h1>
+            </div>
+            <div class="container">
+                <table class="table" <thead id="tHead">
+                    <tr>
+                        <th scope="col">Pronunciation:</th>
+                        <th scope="col">Literal Translation:</th>
+                        <th scope="col">Meaning:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{this.pronunciation}}</th>
+                            <td>{{this.literalTrans}}</td>
+                            <td>{{this.meaning}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer text-white card-body justify-content-left">
+                <h3 class="
+                        card-title" id="connections">Connections:</h3>
+                <p class="card-title" id="langOne">{{this.languageConnection}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+
+
+
+<script type="text/javascript">
+    $("#addIdiom").on("submit", function (event) {
+        event.preventDefault();
+
+        var newIdiom = {
+            idiom: $("#addIdiom [connection=lang]").val().trim()
+        };
+
+        // Send the POST request.
+        $.ajax("/idioms", {
+            type: "POST",
+            data: showIdiom
+        }).then(
+            function () {
+                console.log("displayed a new idiom");
+
+                location.reload();
+            }
+        );
+    });
+</script>
+
+{{!-- buttons display if there is data in the db and they have the 3 most amount of data --}}
