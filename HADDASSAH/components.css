@@ -1,0 +1,15 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.heading, .content {
+    width: 50%;
+    float: left;
+}
+.heading {
+   text-align: right;
+} 
+
+.content div {
+    margin-left: 10px;
+}
