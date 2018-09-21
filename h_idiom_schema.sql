@@ -21,3 +21,16 @@ language varchar
 PRIMARY KEY
     (id)
 );
+
+
+    INSERT INTO idioms
+        (original_idiom, pronunciation, literal_translation, meaning)
+    VALUES
+        ("buen provecho", "boo-en pro-veh-chow", "Good Advantage", "Enjoy your food!", "Spanish");
+
+
+
+    INSERT INTO idioms
+        (`original_idiom`, `pronunciation
+        `, `literal_translation`, `meaning`, `idiomLanguage`) VALUES
+    ('buen provecho', '\"boo-en pro-veh-chow\"', 'Good Advantage', 'Enjoy your food!', 'Spanish');
