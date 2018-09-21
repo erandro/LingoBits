@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="4cards.css"></script>
+</head>
+
+<body>
+
+
+    <!-- Search By Language Drop Down -->
+    <div class="container jumbotron ">
+        <div class="card-deck justify-content-center">
+            <div class="input-group">
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Select Language</option>
+                    <option id="firstLang" value="1">Language 1</option>
+                    <option id="secondLang" value="2">Language 2</option>
+                    <option id="thirdLang" value="3">Language 3</option>
+                    <option id="fourthLang" value="4">Language 4</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="searchByLanguage btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
+                        type="button">Search by Language</button>
+                </div>
+            </div>
+        </div>
+        <!-- container for header for buttons -->
+        <div class="container jumbotron">
+            <div class="card-deck justify-content-center">
+                <h3>Most Popular Languages</h3>
+            </div>
+        </div>
+        <!-- Top 3 Languages Buttons-->
+        <div class="container">
+            <div class="card-deck justify-content-center">
+                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topLangOne" class="card-title">عربى</h1>
+                    </div>
+                </div>
+                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topLangTwo" class="card-title">עִברִית</h1>
+                    </div>
+                </div>
+                <div class="langChoice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topLangThree" class="card-title">Tagalog</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search By Topic -->
+    <div class="container jumbotron ">
+        <div class="card-deck justify-content-center">
+            <div class="input-group">
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Select Topic</option>
+                    <option id="firstTopic" value="1">Food</option>
+                    <option id="secondTopic" value="2">Family</option>
+                    <option id="thirdTopic" value="3">Exclamations!</option>
+                    <option id="fourthTopic" value="4">Sayings</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="searchByTopic btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
+                        type="button">Search by Topic</button>
+                </div>
+            </div>
+        </div>
+        <!-- container for header for buttons -->
+        <div class="container jumbotron">
+            <div class="card-deck justify-content-center">
+                <h3>Most Popular Topics</h3>
+            </div>
+        </div>
+        <!-- Top 3 Topic Buttons-->
+        <div class="container jumbotron">
+            <div class="card-deck justify-content-center">
+                <div class="topTopic card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topTopicOne" class="card-title">Sayings</h1>
+                    </div>
+                </div>
+                <div class="topTopic card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topTopicTwo" class="card-title">Family</h1>
+                    </div>
+                </div>
+                <div class="topTopice card border-dark mb-3 card text-white text-center mb-3" style="max-width: 18rem; background-color: #35acbd !important;">
+                    <div class="card-body">
+                        <h1 id="topTopicThree" class="card-title">Food</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Result Card -->
+    <div class="container">
+        <div class="card-deck justify-content-center">
+            <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 60rem; background-color: #35acbd !important;">
+                <div class="card-header" style=" background-color: #257884">
+                    <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
+                </div>
+                <div class="card-body justify-content-center">
+                    <p class="card-title" style="font-weight: bold">Pronunciation:</p>
+                    <p id="pronunciation">"boo-en proh-veh-choh</p>
+                    <p class="card-text" style="font-weight: bold">Literal Translation:</p>
+                    <p id="literalTrans">Good Advantage</p>
+                    <p class="card-text" style="font-weight: bold">Meaning:</p>
+                    <p id="meaning">Enjoy your meal!</p>
+                </div>
+                <div class="card-footer text-white card-body justify-content-left">
+                    <h3 class="card-title" id="connections">Connections:</h3>
+                    <p class="card-title" id="connectionOne">Hebrew</p>
+                    <p class="card-title" id="connectionTwo">Arabic</p>
+                    <p class="card-title" id="connectionThree">French</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- with table
+    <div class="container">
+        <div class="card-deck justify-content-center">
+            <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 60rem; background-color: #35acbd !important;">
+                <div class="card-header" style=" background-color: #257884">
+                    <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
+                </div>
+                <div class="container">
+                    <table class="table" style="max-width: 70rem;"
+                        <thead id="tHead">
+                            <tr>
+                                <th scope="col">Pronunciation:</th>
+                                <th scope="col">Literal Translation:</th>
+                                <th scope="col">Meaning:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">"boo-en pro-veh-chow"</th>
+                                <td>Good Advantage</td>
+                                <td>Enjoy your meal!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-white card-body justify-content-left">
+                    <h3 class="card-title" id="connections">Connections:</h3>
+                    <p class="card-title" id="langOne">Language 1</p>
+                    <p class="card-title" id="langTwo">Language 2</p>
+                    <p class="card-title" id="langThree">Language 3</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script type="text/javascript">
+
+        $(".getIdioms").on("click", function () {
+            var btn = $(this);
+            console.log(
+                btn.val()
+            );
+        });
+
+
+
+        $("#addIdiom").on("submit", function (event) {
+            event.preventDefault();
+
+            var newIdiom = {
+                idiom: $("#addIdiom [connection=lang]").val().trim()
+            };
+
+            // Send the POST request.
+            $.ajax("/idioms", {
+                type: "POST",
+                data: showIdiom
+            }).then(
+                function () {
+                    console.log("displayed a new idiom");
+
+                    location.reload();
+                }
+            );
+        });
+    </script>
+
+    <!-- buttons display if there is data in the db and they have the 3 most amount of data -->
+
+
+</body>
+
+</html>
