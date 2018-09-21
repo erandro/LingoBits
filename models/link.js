@@ -11,13 +11,13 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey: {
                 allowNull: false
             },
-            as: idoim_1
+            as: "idiom_1"
         });
         Link.belongsTo(models.Idiom, {
             foreignKey: {
                 allowNull: false
             },
-            as: idoim_2
+            as: "idiom_2"
         });
     };
 
