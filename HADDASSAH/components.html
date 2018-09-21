@@ -17,9 +17,9 @@
 
 
     <!-- Search By Language Drop Down -->
-    <div class="container jumbotron">
+    <div class="container mb-5">
         <div class="card-deck justify-content-center">
-            <div class="input-group">
+            <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect04">
                     <option selected>Select Language</option>
                     <option id="firstLang" value="1">Language 1</option>
@@ -33,9 +33,15 @@
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <h1></h1>
+            </div>
+        </div>
         <!-- container for header for buttons -->
-        <div class="container jumbotron">
-            <div class="card-deck justify-content-center">
+        <div class="container">
+            <div class="card-deck justify-content-center mb-3">
                 <h3>Most Popular Languages</h3>
             </div>
         </div>
@@ -59,10 +65,10 @@
     </div>
     </div>
 
-    <!-- Search By Topic -->
-    <div class="container jumbotron">
+    <!-- Search By Topic Drop Down-->
+    <div class="container mb-5">
         <div class="card-deck justify-content-center">
-            <div class="input-group">
+            <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect04">
                     <option selected>Select Topic</option>
                     <option id="firstTopic" value="1">Food</option>
@@ -77,13 +83,13 @@
             </div>
         </div>
         <!-- container for header for buttons -->
-        <div class="container jumbotron">
-            <div class="card-deck justify-content-center">
+        <div class="container mb-3">
+            <div class="card-deck justify-content-center mb-3">
                 <h3>Most Popular Topics</h3>
             </div>
         </div>
         <!-- Top 3 Topic Buttons-->
-        <div class="container jumbotron justify-content-center">
+        <div class="container justify-content-center">
             <div class="row justify-content-center">
                 <div class="col-6 col-md-4 row card-deck justify-content-center">
                     <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
@@ -107,14 +113,15 @@
 
 
     <!-- Result Card -->
-    <div class="container">
-        <div class="card-deck justify-content-center">
-            <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #35acbd !important;">
-                <div class="card-header" style=" background-color: #257884">
-                    <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
-                </div>
-                <!-- commented out code if want info side by side -->
-                <!-- <div class="wrapper justify-content-center">
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col align-self-center card-deck justify-content-center">
+                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #35acbd !important;">
+                    <div class="card-header" style=" background-color: #257884">
+                        <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
+                    </div>
+                    <!-- commented out code if want info side by side -->
+                    <!-- <div class="wrapper justify-content-center">
                     <div class="heading" style="font-weight: bold">Pronunciation: </div>
                     <div class="content">
                         <div id="pronunciation">"boo-en proh-veh-chow"</div>
@@ -132,63 +139,28 @@
                             <div id="meaning">Enjoy your meal!</div>
                         </div>
                     </div> -->
-                <div class="card-body justify-content-center">
-                    <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                    <p id="pronunciation">"boo-en proh-veh-chow"</p>
-                    <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                    <p id="literalTrans">Good Advantage</p>
-                    <p class="card-text" style="font-weight: bold">Meaning:</p>
-                    <p id="meaning">Enjoy your meal!</p>
-                </div>
-                <div class="card-footer text-white card-body justify-content-left">
-                    <h3 class="card-title" id="connections">Connections:</h3>
-                    <p class="card-title" id="connectionOne">Hebrew</p>
-                    <p class="card-title" id="connectionTwo">Arabic</p>
-                    <p class="card-title" id="connectionThree">French</p>
-                </div>
-                <i class="fas fa-plus-circle justify-content-right"></i>
-                <div class="container">
-                    <h1></h1>
+                    <div class="card-body justify-content-center">
+                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
+                        <p id="pronunciation">"boo-en proh-veh-chow"</p>
+                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
+                        <p id="literalTrans">Good Advantage</p>
+                        <p class="card-text" style="font-weight: bold">Meaning:</p>
+                        <p id="meaning">Enjoy your meal!</p>
+                    </div>
+                    <div class="card-footer text-white card-body justify-content-left">
+                        <h3 class="card-title" id="connections">Connections:</h3>
+                        <p class="card-title" id="connectionOne">Hebrew</p>
+                        <p class="card-title" id="connectionTwo">Arabic</p>
+                        <p class="card-title" id="connectionThree">French</p>
+                    </div>
+                    <i class="fas fa-plus-circle justify-content-right"></i>
+                    <div class="container">
+                        <h1></h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- with table
-    <div class="container">
-        <div class="card-deck justify-content-center">
-            <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 60rem; background-color: #35acbd !important;">
-                <div class="card-header" style=" background-color: #257884">
-                    <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
-                </div>
-                <div class="container">
-                    <table class="table" style="max-width: 70rem;"
-                        <thead id="tHead">
-                            <tr>
-                                <th scope="col">Pronunciation:</th>
-                                <th scope="col">Literal Translation:</th>
-                                <th scope="col">Meaning:</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td scope="row">"boo-en pro-veh-chow"</th>
-                                <td>Good Advantage</td>
-                                <td>Enjoy your meal!</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="card-footer text-white card-body justify-content-left">
-                    <h3 class="card-title" id="connections">Connections:</h3>
-                    <p class="card-title" id="langOne">Language 1</p>
-                    <p class="card-title" id="langTwo">Language 2</p>
-                    <p class="card-title" id="langThree">Language 3</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
 
 
