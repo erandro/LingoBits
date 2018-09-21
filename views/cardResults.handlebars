@@ -1,3 +1,4 @@
+{{!-- Result without table --}}
 {{#each result}}
 <div class="card-deck justify-content-center">
     <div class="langChoice card border-dark mb-3 card text-white text-center mb-3 justify-content-center" style="max-width: 20rem; background-color: #35acbd !important;">
@@ -11,8 +12,12 @@
 </div>
 {{/each}}
 
+{{!-- Just some space for my 👀 --}}
+<div class="container jumbotron">
+    <h1></h1>
+</div>
 
-
+{{!-- Result with Table--}}
 {{#each result}}
 <div class="container">
     <div class="card-deck justify-content-center">
@@ -55,7 +60,7 @@
         event.preventDefault();
 
         var newIdiom = {
-            movie: $("#addIdiom [connection=lang]").val().trim()
+            idiom: $("#addIdiom [connection=lang]").val().trim()
         };
 
         // Send the POST request.
@@ -71,3 +76,5 @@
         );
     });
 </script>
+
+{{!-- buttons display if there is data in the db and they have the 3 most amount of data --}}
