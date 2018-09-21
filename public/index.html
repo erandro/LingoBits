@@ -21,51 +21,151 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-dark bg-dark nav">
-        <div class="headTitle">
-            <h1>LingoBits 🌍</h1>
-        </div>
-        <div class="link1">
-            <a href="#"><i class="fas fa-home fa-lg "></i> | </a>
-            <a href="#"><i class="fas fa-plus-circle fa-lg"></i></a>
-        </div>
+        <div class="container">
+
+            <div class="row navRow">
+                <div class="col-sm-3 column1">
+                    <div class="headTitle">
+                        <h1>LingoBits</h1>
+                    </div>
+                </div>
+                <div class="col-sm-7 column2">
+                    <div class="col-auto searchBox mx-auto">
+                        <label class="sr-only" for="inlineFormInput"></label>
+                        <input type="search" class="form-control" id="searchbar" placeholder="idioms">
+                        <button type="button" class="btn btn-info searchBut">Search</button></div>
+                </div>
+                <div class="col-sm-2 column3">
+                    <div class="link1">
+                        <a href="#"><i class="fas fa-home fa-2x"></i> |</a>
+                        <a href="#"><i class="fas fa-plus-circle fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </nav>
+
     <br>
 
     <!-- center -->
-    <div class="worldimg mx-auto">
-        <div class="wrapper1 mx-auto"></div>
-        <div class="col-auto searchBox mx-auto">
-            <label class="sr-only" for="inlineFormInput"></label>
-            <input type="search" class="form-control" id="searchbar" placeholder="idioms">
-            <button type="button" class="btn btn-info searchBut">Search</button></div>
 
-        <!--  -->
-        <!-- <div class="inner-box mx-auto">
 
-            <br>
-            <h6>Spanish</h6>
-            <p>IDIOMS HERE - amet consectetur adipisicing elit. Repellendus, neque. Eaque sit
-                repudiandae expedita praesentium inventore enim suscipit id! Quidem similique optio
-            </p>
 
-            <h6>Hebrew</h6>
-            <p>IDIOMS HERE - amet consectetur adipisicing elit. Repellendus, neque. Eaque sit
-                repudiandae expedita praesentium inventore enim suscipit id! Quidem similique optio
-            </p>
-            <h6>Tagalag</h6>
-            <p>IDIOMS HERE - amet consectetur adipisicing elit. Repellendus, neque. Eaque sit
-                repudiandae expedita praesentium inventore enim suscipit id! Quidem similique optio
+    <div class="container mb-5">
+        <div class="row">
+            <div class=" mb-5"></div>
+            <div class="col sm-md-12">
 
+                <!--  Haddassah divs ************************ -->
+
+                <div class="card-deck justify-content-center">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="inputGroupSelect04">
+                            <option selected>Select Language</option>
+                            <option id="firstLang" value="1">Language 1</option>
+                            <option id="secondLang" value="2">Language 2</option>
+                            <option id="thirdLang" value="3">Language 3</option>
+                            <option id="fourthLang" value="4">Language 4</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="searchByLanguage btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
+                                type="button">Search by Language</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <h1></h1>
+                </div>
+            </div>
+            <!-- container for header for buttons -->
+            <div class="container">
+                <div class="card-deck justify-content-center mb-3">
+                    <h3>Most Popular Languages</h3>
+                </div>
+            </div>
+            <!-- Top 3 Languages Buttons-->
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">עִברִית
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Tagalog
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">عربى
+                    </button>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
+    </div>
+    <!-- Search By Topic Drop Down-->
+    <div class="container mb-5">
+        <div class="card-deck justify-content-center">
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect04">
+                    <option selected>Select Topic</option>
+                    <option id="firstTopic" value="1">Food</option>
+                    <option id="secondTopic" value="2">Family</option>
+                    <option id="thirdTopic" value="3">Exclamations!</option>
+                    <option id="fourthTopic" value="4">Sayings</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="searchByTopic btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
+                        type="button ">Search by Topic</button>
+                </div>
+            </div>
+        </div>
+        <!-- container for header for buttons -->
+        <div class="container mb-3">
+            <div class="card-deck justify-content-center mb-3">
+                <h3>Most Popular Topics</h3>
+            </div>
+        </div>
+        <!-- Top 3 Topic Buttons-->
+        <div class="container justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Sayings
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Family
+                    </button>
+                </div>
+                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                        style="background-color: #35acbd !important;">Food
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
-        <br>
-        <footer class="footer mx-auto">
-            <p>copyright © 2018</p>
-        </footer>
+
+    </div>
+    </div>
+
+    </div>
+
+    <br>
+    <footer class="footer mx-auto">
+        <p>copyright © 2018</p>
+    </footer>
 </body>
 
 </html>
