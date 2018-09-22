@@ -116,12 +116,21 @@ module.exports = function (app) {
         res.send(err);
       });
   });
-  //POST newLink between two idioms
-  app.post("/api/newLink", function (req, res) {
-    newLink = req.body;
-    db.newLink.create(newLink)
-      .then(function (linkdb) {
-        res.json(linkdb);
+  //POST a new idiom linked to existing
+  app.post("/api/idiom/:curIdiomId", function (req, res) {
+    var curIdiomId = parseInt(req.params.curIdiomId);
+    var newIdiom = req.body;
+    db.Idiom.create(newIdiom)
+      .then(function (newIdiomdb) {
+        //create a new link between curIdiomId and newIdiomdb.id
+        var newLink = { idiom1Id: curIdiomId, idiom2Id: newIdiomdb.id };
+        db.Link.create(newLink)
+          .then(function (newLinkdb) {
+            res.status(200).json(newIdiomdb);
+          })
+          .catch(function (err) {
+            res.send(err);
+          });
       })
       .catch(function (err) {
         res.send(err);
