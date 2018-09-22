@@ -61,18 +61,19 @@
 
                 <!--  Haddassah divs ************************ -->
 
-                <div class="card-deck justify-content-center">
+                <div class="card-deck justify-content-center" id="home_page_div">
                     <div class="input-group mb-3">
-                        <select class="custom-select" id="inputGroupSelect04">
+                        <select class="custom-select">
                             <option selected>Select Language</option>
-                            <option id="firstLang" value="1">Language 1</option>
-                            <option id="secondLang" value="2">Language 2</option>
-                            <option id="thirdLang" value="3">Language 3</option>
-                            <option id="fourthLang" value="4">Language 4</option>
+                            <option class="search_language_input" id="firstLang" value="1">Language 1</option>
+                            <option class="search_language_input" id="secondLang" value="2">Language 2</option>
+                            <option class="search_language_input" id="thirdLang" value="3">Language 3</option>
+                            <option class="search_language_input" id="fourthLang" value="4">Language 4</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="searchByLanguage btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
-                                type="button">Search by Language</button>
+                            <button class="search_language_submit btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
+                                type="button">Search by
+                                Language</button>
                         </div>
                     </div>
                 </div>
@@ -89,18 +90,19 @@
                 </div>
             </div>
             <!-- Top 3 Languages Buttons-->
-            <div class="row justify-content-center">
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
+            <div class="row justify-content-center language_button">
+                <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
                     <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
                         style="background-color: #35acbd !important;">עִברִית
                     </button>
+
                 </div>
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
                     <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
                         style="background-color: #35acbd !important;">Tagalog
                     </button>
                 </div>
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
+                <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
                     <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
                         style="background-color: #35acbd !important;">عربى
                     </button>
@@ -109,11 +111,11 @@
         </div>
     </div>
     </div>
-    <!-- Search By Topic Drop Down-->
+    <!-- Search By Category Drop Down-->
     <div class="container mb-5">
         <div class="card-deck justify-content-center">
             <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect04">
+                <select class="custom-select" id="search_category_input">
                     <option selected>Select Topic</option>
                     <option id="firstTopic" value="1">Food</option>
                     <option id="secondTopic" value="2">Family</option>
@@ -132,23 +134,25 @@
                 <h3>Most Popular Topics</h3>
             </div>
         </div>
-        <!-- Top 3 Topic Buttons-->
-        <div class="container justify-content-center">
-            <div class="row justify-content-center">
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
-                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
-                        style="background-color: #35acbd !important;">Sayings
-                    </button>
-                </div>
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
-                    <button id="topicBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
-                        style="background-color: #35acbd !important;">Family
-                    </button>
-                </div>
-                <div class="col-6 col-md-4 row card-deck justify-content-center">
-                    <button id="topicBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
-                        style="background-color: #35acbd !important;">Food
-                    </button>
+        <!-- Top 3 Category Buttons-->
+        <div class="row category_button">
+            <div class="container justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-md-4 row card-deck justify-content-center search">
+                        <button id="categoryBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                            style="background-color: #35acbd !important;">Sayings
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-4 row card-deck justify-content-center">
+                        <button id="categoryBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                            style="background-color: #35acbd !important;">Family
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-4 row card-deck justify-content-center">
+                        <button id="categoryBtn3" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                            style="background-color: #35acbd !important;">Food
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,36 +167,7 @@
     </div>
 
     <!-- cards -->
-    <div class="container justify-content-center">
-        <div class="row justify-content-center">
-            <div class="col align-self-center card-deck justify-content-center">
-                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #35acbd !important;">
-                    <div class="card-header" style=" background-color: #257884">
-                        <h1 class="card-title" id="OrigIdiom">¡Buen provecho!</h1>
-                    </div>
 
-                    <div class="card-body justify-content-center">
-                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p id="pronunciation">"boo-en proh-veh-chow"</p>
-                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p id="literalTrans">Good Advantage</p>
-                        <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p id="meaning">Enjoy your meal!</p>
-                    </div>
-                    <div class="card-footer text-white card-body justify-content-left">
-                        <h3 class="card-title" id="connections">Connections:</h3>
-                        <p class="card-title" id="connectionOne">Hebrew</p>
-                        <p class="card-title" id="connectionTwo">Arabic</p>
-                        <p class="card-title" id="connectionThree">French</p>
-                    </div>
-                    <i class="fas fa-plus-circle justify-content-right"></i>
-                    <div class="container">
-                        <h1></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <br>
     <footer class="footer mx-auto">
