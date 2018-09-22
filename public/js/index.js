@@ -22,6 +22,34 @@ function loadScript(url, callback) {
 
 $(document).ready(function () {
 
+  // assign values to all elements that are called
+  var homepageDiv = $("#home_page_div");
+  var categoryDiv = $("#the_category_div");
+  var languageDiv = $("#the_language_div");
+  var idiomDiv = $("#the_idiom_div");
+  var addIdiomDiv = $("#add_page_div");
+
+  var searchIdiomSubmit = $("#search_idiom_submit");
+  var searchIdiomImput = $("#search_idiom_input");
+  var addIdiomButton = $("#adding_button");
+  var equivalentIdiom = $(".link_idiom");
+
+  var addIdiomSubmit = $("#submit_button");
+  var formLanguage = $("#language_form");
+  var formIdiom = $("#idiom_form");
+  var formPronunciation = $("#pronunciation_form");
+  var formLiteral = $("#literal_form");
+  var formMeaning = $("#meaning_form");
+  var formCategory = $("#category_form");
+
+  var categoryButton = $(".category_button");
+  var searchCategorySubmit = $("#search_category_submit");
+  var searchCategoryImput = $("#search_category_input");
+
+  var languageButton = $(".language_button");
+  var searchLanguageSubmit = $("#search_language_submit");
+  var searchLanguageImput = $("#search_language_input");
+
   // Display changes action
   function hideAndShow(hideTag, showTag) {
     if (hideTag.hasClass("show_class_name")) {
@@ -36,30 +64,28 @@ $(document).ready(function () {
   $(function () {
 
     // show idiom's adding form
-    $(".adding_button").on("click", function (event) {
-      // can change the "adding_button" button name
+    addIdiomButton.on("click", function (event) {
       event.preventDefault();
       // we should have the add button have an id of the idiom  
       var id = $(this).data("id");
-      hideAndShow("#home_page_div", "#add_idiom_div");
-      $(".submit_button").attr("data-id", id);
+      hideAndShow(homepageDiv, addIdiomDiv);
+      addIdiomSubmit.attr("data-id", id);
     });
 
     // ajax calls:
 
     // create new idiom
-    $(".submit_button").on("click", function (event) {
-      // can change the "submit_button" button name
+    addIdiomSubmit.on("click", function (event) {
       event.preventDefault();
       // we should have the add button have an id of the idiom
       var id = $(this).data("id");
       var newIdiom = {
-        language: $("#language_form"), // send language id
-        origin_idiom: $("#idiom_form").val().trim(),
-        pronunciation: $("#pronunciation_form").val().trim(),
-        literal_meaning: $("#literal_form").val().trim(),
-        meaning: $("#meaning_form").val().trim(),
-        category: $("#category_form").val().trim(),
+        language: formLanguage, // send language id
+        origin_idiom: formIdiom.val().trim(),
+        pronunciation: formPronunciation.val().trim(),
+        literal_meaning: formLiteral.val().trim(),
+        meaning: formMeaning.val().trim(),
+        category: formCategory.val().trim(),
         equevilant_id: id
       };
       console.log(newIdiom);
@@ -68,8 +94,8 @@ $(document).ready(function () {
         data: newIdiom
       }).then(
         function () {
-          $(".submit_button").removeAttr("data-id");
-          hideAndShow("add_page_div", "the_idiom_div");
+          addIdiomSubmit.removeAttr("data-id");
+          hideAndShow(addIdiomDiv, idiomDiv);
           // need to run the "get specific idiom" function
           // do things to show the new idiom as a card
           location.reload();
@@ -78,10 +104,9 @@ $(document).ready(function () {
     });
 
     // get specific idiom - search by name / id
-    $("#search_idiom_submit".on("click", function (event) {
+    searchIdiomSubmit.on("click", function (event) {
       event.preventDefault();
-      // can change the "search_idiom_submit" and "search_idiom_input" button/class/id name
-      var name = $("#search_idiom_input");
+      var name = searchIdiomImput;
       var idiomName = {
         idiomName: name
       };
@@ -90,16 +115,15 @@ $(document).ready(function () {
         data: idiomName
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_idiom_div");
+          hideAndShow(homepageDiv, idiomDiv);
           // do things to show the new idiom as a card
           location.reload();
         }
       );
-    }));
-    $(".link_idiom".on("click", function (event) {
+    });
+    equivalentIdiom.on("click", function (event) {
       event.preventDefault();
-      // can change the "link_idiom" class name
-      // we should have the link_idiom button have an id of the idiom
+      // we should have the equivalentIdiom button have an id of the idiom
       var id = $(this).data("id");
       var idiomId = {
         idiomId: id
@@ -109,17 +133,16 @@ $(document).ready(function () {
         data: idiomId
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_idiom_div");
+          hideAndShow(homepageDiv, idiomDiv);
           // do things to show the new idiom as a card
           location.reload();
         }
       );
-    }));
+    });
 
     // get all idioms from specific category - search by category
-    $(".category_button").on("click", function (event) {
+    categoryButton.on("click", function (event) {
       event.preventDefault();
-      // can change the "category_button" class name
       // we should have the category button have an name of the category  
       var category = $(this).data("name");
       var idiomsCategory = {
@@ -130,16 +153,15 @@ $(document).ready(function () {
         data: idiomsCategory
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_category_div");
+          hideAndShow(homepageDiv, categoryDiv);
           // do things to show the idioms by category on category card
           location.reload();
         }
       );
     });
-    $("#search_category_submit").on("click", function (event) {
+    searchCategorySubmit.on("click", function (event) {
       event.preventDefault();
-      // can change the "search_language_submit" and "search_language_input" button/class/id name
-      var category = $("#search_category_input");
+      var category = searchCategoryImput;
       var idiomsLanguage = {
         idiomsCategory: category
       };
@@ -148,7 +170,7 @@ $(document).ready(function () {
         data: idiomsLanguage
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_category_div");
+          hideAndShow(homepageDiv, categoryDiv);
           // do things to show the idioms by language on language card
           location.reload();
         }
@@ -156,9 +178,8 @@ $(document).ready(function () {
     });
 
     // get all idioms from specific language - search by language
-    $(".language_button").on("click", function (event) {
+    languageButton.on("click", function (event) {
       event.preventDefault();
-      // can change the "language_button" class name
       // we should have the language button have an name of the language  
       var language = $(this).data("name");
       var idiomsLanguage = {
@@ -169,16 +190,15 @@ $(document).ready(function () {
         data: idiomsLanguage
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_language_div");
+          hideAndShow(homepageDiv, languageDiv);
           // do things to show the idioms by language on language card
           location.reload();
         }
       );
     });
-    $("#search_language_submit").on("click", function (event) {
+    searchLanguageSubmit.on("click", function (event) {
       event.preventDefault();
-      // can change the "search_language_submit" and "search_language_input" button/class/id name
-      var language = $("#search_language_input");
+      var language = searchLanguageImput;
       var idiomsLanguage = {
         idiomsLanguage: language
       };
@@ -187,7 +207,7 @@ $(document).ready(function () {
         data: idiomsLanguage
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_language_div");
+          hideAndShow(homepageDiv, languageDiv);
           // do things to show the idioms by language on language card
           location.reload();
         }
