@@ -32,7 +32,7 @@ nav a {
   
 }
 
-.searchBut {
+.search_idiom_submit {
 
   background-color: #425de6!important;
 }
@@ -63,6 +63,7 @@ p {
   margin: 20px;
 }
 column1{
+
 }
 column2{
   display: inline-flex;
