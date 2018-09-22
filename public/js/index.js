@@ -148,7 +148,7 @@ $(document).ready(function () {
         data: idiomsLanguage
       }).then(
         function () {
-          hideAndShow("home_page_div", "the_language_div");
+          hideAndShow("home_page_div", "the_category_div");
           // do things to show the idioms by language on language card
           location.reload();
         }
