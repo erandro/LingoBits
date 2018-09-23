@@ -19,14 +19,14 @@ insert into Idioms (origin_idiom, pronunciation, literal_meaning, meaning, categ
 ("Huwag mong iyakan ang tumapon na gatas", "Hu-wag mong i-ya-kan a-ng tu-ma-pon nah ga-tas", "don't crying over spilled milk", "You cannot look back on something you cannot change", "regret"),
 -- 2
 ("Put to shame", "put tu sheim", "Put to shame", "to cause to suffer shame or disgrace", "shame"),
-("הלְבִּין פְּנֵיו בָּרַבִּים", "helbin panav be-rabim", "Bleached his face in the present of many", "To insulted one's friend in the presence of others, making his face pale (white) with shame", "shame"),("Put to shame", "put tu sheim", "Put to shame", "to cause to suffer shame or disgrace", "shame"),
+("הלְבִּין פְּנֵיו בָּרַבִּים", "helbin panav be-rabim", "Bleached his face in the present of many", "To insulted one's friend in the presence of others, making his face pale (white) with shame", "shame"),
 ("Pahiya mo sya", "pah-hi-ya mo syah", "Put to shame", "to embarassed him", "shame"),
 -- 3
 ("מַטְבְּע לָשׁוֹן", "matbe-a lashon", "Tongue's coin, Language currency", "Phrase or an idiom", "phrase"),
 -- 4
 ("Ripe old age", "raɪp oʊld eɪʤ", "Ripe old age", "A very old age", "age"),
-("בָּא בַּיָּמִים", "ba ba-yamim", "Come in Days", "Someone who lived for a lot of days - very old (from Genesis - the Bible)" "age"),
-("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripe old age", "at the right age" "age"),
+("בָּא בַּיָּמִים", "ba ba-yamim", "Come in Days", "Someone who lived for a lot of days - very old (from Genesis - the Bible)", "age"),
+("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripe old age", "at the right age", "age"),
 -- 5
 ("Be of the same mind", "bi ʌv ðə seɪm maɪnd", "Be of the same mind", "To have the same opinion", "opinion"),
 ("תְּמִימוּת דֵּעִים", "tmimut de-im", "Opinions naivety", "Full consensus, unity of opinion (from Job - the Bible)", "opinion"),
