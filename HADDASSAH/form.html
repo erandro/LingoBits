@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="components.css" />
+</head>
+
+<body>
+
+
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col align-self-center card-deck justify-content-center">
+                <div class="card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #35acbd !important;">
+                    <div class="container">
+                        <div class="card-header mb-3 mt-3" style=" background-color: #257884">
+                            <h1 class="card-title" id="OrigIdiom">Add a new idiom</h1>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="dropDownLang">Origin Language of the Idiom
+                                    </label>
+                                    <select required class="form-control is-valid" placeholder="Select a language">
+                                        <option selected>Choose...</option>
+                                        <option>English</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col">
+                                <label for=Category>Category</label>
+                                <input type="text" class="form-control" placeholder="Category">
+                            </div>
+                            <div class="form-group">
+                                <label for=pronunciation>Idiom in original language</label>
+                                <textarea required type="text" class="form-control" rows="2" placeholder='Example: "Can you dig it?"'></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for=pronunciation>Pronunciation</label>
+                                <textarea type="text" class="form-control" rows="2" placeholder="pro-nun-see-ay-shun"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for=pronunciation>Literal Translation</label>
+                                <textarea required class="form-control" rows="2" placeholder='Example: Can you shovel something?'></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Meaning">Meaning</label>
+                                <textarea required class="form-control" rows="4" placeholder="Meaning/Connotation-Example: Can you dig it is slang for 'Do you understand?' and it i'"></textarea>
+                            </div>
+                            <button type="button" class="mb-7 text-white btn btn-lg" style=" background-color: #257884">Submit
+                                New Idiom</button>
+                            <div class="form-group"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
