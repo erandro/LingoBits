@@ -35,6 +35,12 @@ nav a {
   width: 100%;
   
 }
+.searchBut {
+  right: -70px;
+  position: absolute;
+  top: -1px;
+  background-color: #425de6!important;
+} 
 
 .search_idiom_submit {
 
