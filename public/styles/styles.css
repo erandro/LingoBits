@@ -65,7 +65,9 @@ h3 {
 .languageRow{
   width: 100%;
 }
-
+hideDiv {
+  display: none;
+}
 /* .worldimg {
   width: 100%;
   height: 470px;
