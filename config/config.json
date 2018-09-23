@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "root",
-    "database": "testdb",
+    "database": "idioms_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
