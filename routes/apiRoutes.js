@@ -27,7 +27,6 @@ module.exports = function (app) {
           }
         })
           .then(function (links) {
-            console.log("Links Found " + links);
             var linked_idioms_ids = [];
             var ratings = [];
             //fill the array linked_idioms_ids with ids of linked idioms
@@ -40,8 +39,6 @@ module.exports = function (app) {
               }
               ratings.push(link.rating);
             }
-            console.log("Linked Idioms Ids " + linked_idioms_ids);
-            console.log("Linked Idioms Ratings " + ratings);
             db.Idiom.findAll({
               where: {
                 id: {
@@ -68,7 +65,6 @@ module.exports = function (app) {
                   LanguageId: requestedIdiom.LanguageId,
                   LinkedIdioms: linkedIdiomsArr
                 };
-                console.log("Before Sending " + JSON.stringify(idiomToSend));
                 res.status(200).json(idiomToSend);
               })
               .catch(function (err) {
@@ -86,8 +82,23 @@ module.exports = function (app) {
 
   //Get idioms by language
   app.get("/api/idiomsbyLanguage/:langId", function (req, res) {
-    db.Language.findAll({
-      where: { LanguageId: req.params.langId }
+    db.Idiom.findAll({
+      where: { LanguageId: parseInt(req.params.langId) }
+    })
+      .then(function (idioms) {
+        res.status(200).json(idioms);
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.send(err);
+      });
+  });
+  //Get idioms by category
+  app.get("/api/idiomsbyCategory/:category", function (req, res) {
+    db.Idiom.findAll({
+      where: {
+        category: { [Op.like]: `%${req.params.category}%` }
+      }
     })
       .then(function (idioms) {
         res.json(idioms);
@@ -97,11 +108,10 @@ module.exports = function (app) {
         res.send(err);
       });
   });
-  //Get idioms by category
-  app.get("/api/idiomsbyCategory/:category", function (req, res) {
-    db.Language.findAll({
+  app.get("/api/idiomsbyName", function (req, res) {
+    db.Idiom.findAll({
       where: {
-        category: { [Op.like]: `%${req.params.category}%` }
+        origin_idiom: { [Op.like]: `%${req.body.name}%` }
       }
     })
       .then(function (idioms) {
