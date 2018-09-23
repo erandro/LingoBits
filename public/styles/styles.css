@@ -59,6 +59,12 @@ nav a {
 
   background-color: #425de6!important;
 }
+h3 {
+  font-family: 'Nunito', sans-serif;
+}
+.languageRow{
+  width: 100%;
+}
 
 /* .worldimg {
   width: 100%;
@@ -99,10 +105,10 @@ column1{
   left: 101px;
   top: 8px;
 }
-/* .column2{
+.column2{
   display: inline-flex;
-  left: 27px;
-} */
+  
+}
 
 footer {
   background-color: #35acbd !important;

@@ -110,6 +110,7 @@ module.exports = function (app) {
   });
   app.get("/api/idiomsbyName", function (req, res) {
     db.Idiom.findAll({
+      limit: 10,
       where: {
         origin_idiom: { [Op.like]: `%${req.body.name}%` }
       }
