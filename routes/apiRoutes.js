@@ -108,6 +108,20 @@ module.exports = function (app) {
         res.send(err);
       });
   });
+  app.get("/api/idiomsbyName", function (req, res) {
+    db.Idiom.findAll({
+      where: {
+        origin_idiom: { [Op.like]: `%${req.body.name}%` }
+      }
+    })
+      .then(function (idioms) {
+        res.json(idioms);
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.send(err);
+      });
+  });
   // Get all languages
   app.get("/api/languages", function (req, res) {
     db.Language.findAll({})
