@@ -62,13 +62,13 @@
                 <!-- Home Page -->
 
                 <div class="card-deck justify-content-center inputbox">
-                    <div class="input-group mb-3" id="search_language_input">
-                        <select class="custom-select">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="search_language_input">
                             <option selected>Select Language</option>
-                            <option class="search_language_input" id="firstLang" value="1">Language 1</option>
-                            <option class="search_language_input" id="secondLang" value="2">Language 2</option>
-                            <option class="search_language_input" id="thirdLang" value="3">Language 3</option>
-                            <option class="search_language_input" id="fourthLang" value="4">Language 4</option>
+                            <option id="firstLang" value="1">Language 1</option>
+                            <option id="secondLang" value="2">Language 2</option>
+                            <option id="thirdLang" value="3">Language 3</option>
+                            <option id="fourthLang" value="4">Language 4</option>
                         </select>
                         <div class="input-group-append">
                             <button class="btn text-white btn-outline-secondary language_button" style="max-width: 20rem; background-color: #35acbd !important;"
@@ -88,19 +88,19 @@
             <br>
             <div class="container category_button">
                 <div class="row justify-content-center">
-                    <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
-                        <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                    <div class="col-6 col-md-4 row card-deck justify-content-center">
+                        <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button"
                             style="background-color: #35acbd !important;">עִברִית
                         </button>
 
                     </div>
-                    <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
-                        <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                    <div class="col-6 col-md-4 row card-deck justify-content-center">
+                        <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button"
                             style="background-color: #35acbd !important;">Tagalog
                         </button>
                     </div>
-                    <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
-                        <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
+                    <div class="col-6 col-md-4 row card-deck justify-content-center">
+                        <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button"
                             style="background-color: #35acbd !important;">عربى
                         </button>
                     </div>
@@ -115,10 +115,10 @@
             <div class="input-group mb-3" id="search_category_input">
                 <select class="custom-select">
                     <option selected>Select Topic</option>
-                    <option id="firstTopic" value="1">Food</option>
-                    <option id="secondTopic" value="2">Family</option>
-                    <option id="thirdTopic" value="3">Exclamations!</option>
-                    <option id="fourthTopic" value="4">Sayings</option>
+                    <option id="firstTopic" class="category_button" value="1">Food</option>
+                    <option id="secondTopic" class="category_button" value="2">Family</option>
+                    <option id="thirdTopic" class="category_button" value="3">Exclamations!</option>
+                    <option id="fourthTopic" class="category_button" value="4">Sayings</option>
                 </select>
                 <div class="input-group-append">
                     <button class="searchByTopic btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
@@ -178,7 +178,8 @@
             <div class="col align-self-center card-deck justify-content-center">
                 <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #85cdd7 !important;">
                     <div class="card-header" style=" background-color: #9ad5de">
-                        <h1 class="card-title" id="OrigIdiom"></h1><i class="fas fa-plus-circle fa-lg justify-content-right"></i>
+                        <h1 class="card-title" id="OrigIdiom"></h1><i class="fas fa-plus-circle fa-lg justify-content-right"
+                            id="adding_button"></i>
                     </div>
 
                     <div class="card-body justify-content-center">
