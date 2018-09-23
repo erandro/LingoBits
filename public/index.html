@@ -34,8 +34,8 @@
                 <div class="col-sm-7 column2">
                     <div class="col-auto searchBox mx-auto">
                         <label class="sr-only" for="inlineFormInput"></label>
-                        <input type="search" class="form-control" id="searchbar" placeholder="idioms">
-                        <button type="button" class="btn btn-info search_idiom_submit">Search</button></div>
+                        <input type="search" class="form-control" id="search_idiom_input" placeholder="idioms">
+                        <button type="button" class="btn btn-info searchBut" id="search_idiom_submit">Search</button></div>
                 </div>
                 <div class="col-sm-2 column3">
                     <div class="link1">
@@ -55,14 +55,14 @@
 
 
     <div class="container mb-5">
-        <div class="row mb-10 row1">
+        <div class="row mb-10 row1" id="home_page_div">
             <div class=" mb-5"></div>
             <div class="col sm-md-12">
 
                 <!--  Haddassah divs ************************ -->
 
-                <div class="card-deck justify-content-center" id="home_page_div">
-                    <div class="input-group mb-3">
+                <div class="card-deck justify-content-center">
+                    <div class="input-group mb-3" id="search_language_input">
                         <select class="custom-select">
                             <option selected>Select Language</option>
                             <option class="search_language_input" id="firstLang" value="1">Language 1</option>
@@ -71,9 +71,8 @@
                             <option class="search_language_input" id="fourthLang" value="4">Language 4</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="search_language_submit btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
-                                type="button">Search by
-                                Language</button>
+                            <button class="btn text-white btn-outline-secondary language_button" style="max-width: 20rem; background-color: #35acbd !important;"
+                                id="search_language_submit" type="button">Language Name</button>
                         </div>
                     </div>
                 </div>
@@ -86,7 +85,7 @@
                 </div>
             </div>
             <!-- Top 3 Languages Buttons-->
-            <div class="row justify-content-center language_button">
+            <div class="row justify-content-center" id="the_language_div">
                 <div class="col-6 col-md-4 row card-deck justify-content-center language_button">
                     <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2"
                         style="background-color: #35acbd !important;">עִברִית
@@ -109,9 +108,9 @@
     </div>
     <!-- Search By Category Drop Down-->
     <div class="container mb-5">
-        <div class="card-deck justify-content-center">
-            <div class="input-group mb-3">
-                <select class="custom-select" id="search_category_input">
+        <div class="card-deck justify-content-center" id="the_category_div">
+            <div class="input-group mb-3" id="search_category_input">
+                <select class="custom-select">
                     <option selected>Select Topic</option>
                     <option id="firstTopic" value="1">Food</option>
                     <option id="secondTopic" value="2">Family</option>
@@ -120,7 +119,7 @@
                 </select>
                 <div class="input-group-append">
                     <button class="searchByTopic btn text-white btn-outline-secondary" style="max-width: 20rem; background-color: #35acbd !important;"
-                        type="button ">Search by Topic</button>
+                        type="button" id="search_category_submit">Search by Topic</button>
                 </div>
             </div>
         </div>
@@ -131,7 +130,7 @@
             </div>
         </div>
         <!-- Top 3 Category Buttons-->
-        <div class="row category_button">
+        <div class="row">
             <div class="container justify-content-center">
                 <div class="row justify-content-center">
                     <div class="col-6 col-md-4 row card-deck justify-content-center search">
