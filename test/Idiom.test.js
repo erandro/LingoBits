@@ -152,4 +152,56 @@ describe("Testing Idiom Routes", function () {
             });
 
     });
+
+    it("should find all idioms by Language", function (done) {
+        var languages = testFixtures.languages;
+        var idioms = testFixtures.idioms;
+        var links = testFixtures.links;
+        //Add Languages to the db to satisfy the foreign key constraint using Language Id in the idioms table
+        db.Language.bulkCreate(languages)
+            .then(function () {
+                // Add some idioms to the db to test with
+                db.Idiom.bulkCreate(idioms).then(function () {
+                    // Request the route that returns all idioms
+                    request.get("/api/idiomsbyLanguage/4").end(function (err, res) {
+                        var responseStatus = res.status;
+                        var responseBody = res.body;
+
+                        // Run assertions on the response
+                        expect(err).to.be.null;
+                        expect(responseStatus).to.equal(200);
+
+                        expect(responseBody).to.be.an("array").that.has.lengthOf(3);
+                        done();
+                    });
+                });
+            });
+
+    });
+
+    it("should find all idioms by Category", function (done) {
+        var languages = testFixtures.languages;
+        var idioms = testFixtures.idioms;
+        var links = testFixtures.links;
+        //Add Languages to the db to satisfy the foreign key constraint using Language Id in the idioms table
+        db.Language.bulkCreate(languages)
+            .then(function () {
+                // Add some idioms to the db to test with
+                db.Idiom.bulkCreate(idioms).then(function () {
+                    // Request the route that returns all idioms
+                    request.get("/api/idiomsbyCategory/happy").end(function (err, res) {
+                        var responseStatus = res.status;
+                        var responseBody = res.body;
+
+                        // Run assertions on the response
+                        expect(err).to.be.null;
+                        expect(responseStatus).to.equal(200);
+
+                        expect(responseBody).to.be.an("array").that.has.lengthOf(4);
+                        done();
+                    });
+                });
+            });
+
+    });
 });
