@@ -16,33 +16,64 @@ module.exports = function (app) {
   });
   //GET idiom by id
   app.get("/api/idiom/:id", function (req, res) {
-    Idiom.findOne({
-      where: { id: req.params.id }
+    db.Idiom.findOne({
+      where: { id: parseInt(req.params.id) }
     })
-      .then(function (idiom) {
-        var newLinked_idioms_ids = [];
-        //look in the newLinks table for newLinked idioms
-        db.newLink.findAll({
+      .then(function (requestedIdiom) {
+        //look in the Links table for linked idioms
+        db.Link.findAll({
           where: {
-            [Op.or]: [{ idiom1Id: req.params.id }, { idiom2Id: req.params.id }]
+            [Op.or]: [{ idiom1Id: parseInt(req.params.id) }, { idiom2Id: parseInt(req.params.id) }]
           }
         })
-          .then(function (newLinks) {
-            //for each newLink
-            for (const newLink of newLinks) {
+          .then(function (links) {
+            var linked_idioms_ids = [];
+            var ratings = [];
+            //fill the array linked_idioms_ids with ids of linked idioms
+            for (var link of links) {
               //if Idiom1 is the original idiom
-              if (newLink.idiom1Id === parseInt(req.params.id)) {
-                newLinked_idioms_ids.push(newLink.idiom2Id);
+              if (link.idiom1Id === parseInt(req.params.id)) {
+                linked_idioms_ids.push(link.idiom2Id);
               } else {//else if Idiom2 is the original idiom
-                newLinked_idioms_ids.push(newLink.idiom1Id);
+                linked_idioms_ids.push(link.idiom1Id);
               }
+              ratings.push(link.rating);
             }
-
+            db.Idiom.findAll({
+              where: {
+                id: {
+                  [Op.or]: linked_idioms_ids
+                }
+              }
+            })
+              .then(function (idioms) {
+                var linkedIdiomsArr = [];
+                for (var linkedIdiom of idioms) {
+                  for (var i = 0; i < linked_idioms_ids.length; i++) {
+                    if (linkedIdiom.id == linked_idioms_ids[i]) {
+                      linkedIdiomsArr.push({ idiom: linkedIdiom, rating: ratings[i] });
+                    }
+                  }
+                }
+                var idiomToSend = {
+                  id: requestedIdiom.id,
+                  origin_idiom: requestedIdiom.origin_idiom,
+                  pronunciation: requestedIdiom.pronunciation,
+                  literal_meaning: requestedIdiom.literal_meaning,
+                  meaning: requestedIdiom.meaning,
+                  category: requestedIdiom.category,
+                  LanguageId: requestedIdiom.LanguageId,
+                  LinkedIdioms: linkedIdiomsArr
+                };
+                res.status(200).json(idiomToSend);
+              })
+              .catch(function (err) {
+                res.send(err);
+              });
           })
           .catch(function (err) {
             res.send(err);
           });
-        //form an array of newLinked idioms and return it with the original idiom
       })
       .catch(function (err) {
         res.send(err);
@@ -51,11 +82,11 @@ module.exports = function (app) {
 
   //Get idioms by language
   app.get("/api/idiomsbyLanguage/:langId", function (req, res) {
-    db.Language.findAll({
-      where: { LanguageId: req.params.langId }
+    db.Idiom.findAll({
+      where: { LanguageId: parseInt(req.params.langId) }
     })
       .then(function (idioms) {
-        res.json(idioms);
+        res.status(200).json(idioms);
       })
       .catch(function (err) {
         console.log(err);
@@ -64,7 +95,7 @@ module.exports = function (app) {
   });
   //Get idioms by category
   app.get("/api/idiomsbyCategory/:category", function (req, res) {
-    db.Language.findAll({
+    db.Idiom.findAll({
       where: {
         category: { [Op.like]: `%${req.params.category}%` }
       }
@@ -77,9 +108,35 @@ module.exports = function (app) {
         res.send(err);
       });
   });
-  //GET idioms by text
-  //(TODO)
-  // Create a new idiom
+  app.get("/api/idiomsbyName", function (req, res) {
+    db.Idiom.findAll({
+      limit: 10,
+      where: {
+        origin_idiom: { [Op.like]: `%${req.body.name}%` }
+      }
+    })
+      .then(function (idioms) {
+        res.json(idioms);
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.send(err);
+      });
+  });
+  // Get all languages
+  app.get("/api/languages", function (req, res) {
+    db.Language.findAll({})
+      .then(function (languages) {
+        console.log("Retrieved: " + languages);
+        res.status(200).json(languages);
+      })
+      .catch(function (err) {
+        res.send(err);
+      });
+  });
+  //(TODO)GET idioms by text
+  //
+  // POST a new idiom
   app.post("/api/idioms", function (req, res) {
     var idiom = req.body;
     db.Idiom.create(idiom)
@@ -91,7 +148,7 @@ module.exports = function (app) {
       });
   });
 
-  // Create a new language
+  // POST a new language
   app.post("/api/languages", function (req, res) {
     var language = req.body;
     db.Language.create(language)
@@ -105,17 +162,6 @@ module.exports = function (app) {
       });
   });
 
-  // Get all languages
-  app.get("/api/languages", function (req, res) {
-    db.Language.findAll({})
-      .then(function (languages) {
-        console.log("Retrieved: " + languages);
-        res.status(200).json(languages);
-      })
-      .catch(function (err) {
-        res.send(err);
-      });
-  });
   //POST a new idiom linked to existing
   app.post("/api/idiom/:curIdiomId", function (req, res) {
     var curIdiomId = parseInt(req.params.curIdiomId);
@@ -136,4 +182,11 @@ module.exports = function (app) {
         res.send(err);
       });
   });
+}
+
+function extend(obj, src) {
+  for (var key in src) {
+    if (src.hasOwnProperty(key)) obj[key] = src[key];
+  }
+  return obj;
 }

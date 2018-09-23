@@ -9,13 +9,21 @@ var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 if (config.use_env_variable) {
+  console.log("index.js inside if");
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
-    config
+    {
+      dialect: 'mysql',
+      logging: false,
+      define: {
+        charset: 'utf8',
+        collate: 'utf8_general_ci'
+      }
+    }
   );
 }
 
