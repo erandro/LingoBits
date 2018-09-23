@@ -26,7 +26,7 @@ insert into Idioms (origin_idiom, pronunciation, literal_meaning, meaning, categ
 -- 4
 ("Ripe old age", "raɪp oʊld eɪʤ", "Ripe old age", "A very old age", "age"),
 ("בָּא בַּיָּמִים", "ba ba-yamim", "Come in Days", "Someone who lived for a lot of days - very old (from Genesis - the Bible)" "age"),
-("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripe age", "at the right age" "age"),
+("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripe old age", "at the right age" "age"),
 -- 5
 ("Be of the same mind", "bi ʌv ðə seɪm maɪnd", "Be of the same mind", "To have the same opinion", "opinion"),
 ("תְּמִימוּת דֵּעִים", "tmimut de-im", "Opinions naivety", "Full consensus, unity of opinion (from Job - the Bible)", "opinion"),

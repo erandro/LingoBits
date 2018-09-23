@@ -10,6 +10,10 @@ body {
 nav {
 height: 150px;
 }
+.row1 {
+  background-color: #d8e1e2;
+  
+}
 
 .bg-dark {
   background-color: #35acbd !important;
@@ -75,7 +79,7 @@ footer {
   background-color: #35acbd !important;
   color: white;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   text-align: center;
   font-size: 8px;
