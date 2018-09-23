@@ -10,9 +10,22 @@ body {
 nav {
 height: 150px;
 }
-.row1 {
-  background-color: #d8e1e2;
-  
+.langRow1 {
+  position: relative;
+  background-color: #cdf3f0;
+  z-index: 2;
+  /* opacity: 0.6; */
+  padding-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
+ color: rgb(75, 77, 77);
+}
+
+
+.catRow2 {
+  font-family: 'Nunito', sans-serif;
+  background-color:  #cdf3f0;
+  padding-bottom: 20px;
+  color: rgb(75, 77, 77);
 }
 
 .bg-dark {
@@ -46,6 +59,12 @@ nav a {
 
   background-color: #425de6!important;
 }
+h3 {
+  font-family: 'Nunito', sans-serif;
+}
+.languageRow{
+  width: 100%;
+}
 
 /* .worldimg {
   width: 100%;
@@ -55,14 +74,16 @@ nav a {
   background-position: center center, left top;
 } */
 
-.inner-box {
+/* .inner-box {
   z-index: 2;
   width: 50%;
   height: 400px;
   left: 261px;
   top: 135px;
   background-color: #35acbd;
-}
+} */
+
+
 h6 {
   font-weight: bold;
   color: white;
@@ -72,13 +93,21 @@ p {
   color: white;
   margin: 20px;
 }
-column1{
 
-}
-column2{
+column1{
   display: inline-flex;
-  top: -46px;
-  left: 274px;
+  right: 4px;
+  top: -5px
+}
+
+.column3{
+  display: inline-flex;
+  left: 101px;
+  top: 8px;
+}
+.column2{
+  display: inline-flex;
+  
 }
 
 footer {
