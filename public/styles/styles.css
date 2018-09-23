@@ -99,10 +99,10 @@ column1{
   left: 101px;
   top: 8px;
 }
-.column2{
+/* .column2{
   display: inline-flex;
   left: 27px;
-}
+} */
 
 footer {
   background-color: #35acbd !important;
