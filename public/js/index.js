@@ -1,7 +1,7 @@
 // this function is for having jquery inside this js file
 // should be deleted after linking this file to the html
 function loadScript(url, callback) {
-  var script = document.createElement("script")
+  var script = document.createElement("script");
   script.type = "text/javascript";
   if (script.readyState) { //IE
     script.onreadystatechange = function () {
@@ -107,12 +107,8 @@ $(document).ready(function () {
     searchIdiomSubmit.on("click", function (event) {
       event.preventDefault();
       var name = searchIdiomImput;
-      var idiomName = {
-        idiomName: name
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomName
+      $.ajax("/api/idioms/name/" + name, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, idiomDiv);
@@ -125,12 +121,8 @@ $(document).ready(function () {
       event.preventDefault();
       // we should have the equivalentIdiom button have an id of the idiom
       var id = $(this).data("id");
-      var idiomId = {
-        idiomId: id
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomId
+      $.ajax("/api/idioms/id/" + id, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, idiomDiv);
@@ -145,12 +137,8 @@ $(document).ready(function () {
       event.preventDefault();
       // we should have the category button have an name of the category  
       var category = $(this).data("name");
-      var idiomsCategory = {
-        idiomsCategory: category
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomsCategory
+      $.ajax("/api/idioms/category/" + category, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, categoryDiv);
@@ -162,12 +150,8 @@ $(document).ready(function () {
     searchCategorySubmit.on("click", function (event) {
       event.preventDefault();
       var category = searchCategoryImput;
-      var idiomsLanguage = {
-        idiomsCategory: category
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomsLanguage
+      $.ajax("/api/idioms/" + category, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, categoryDiv);
@@ -182,12 +166,8 @@ $(document).ready(function () {
       event.preventDefault();
       // we should have the language button have an name of the language  
       var language = $(this).data("name");
-      var idiomsLanguage = {
-        idiomsLanguage: language
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomsLanguage
+      $.ajax("/api/idioms/" + language, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, languageDiv);
@@ -199,12 +179,8 @@ $(document).ready(function () {
     searchLanguageSubmit.on("click", function (event) {
       event.preventDefault();
       var language = searchLanguageImput;
-      var idiomsLanguage = {
-        idiomsLanguage: language
-      };
-      $.ajax("/api/idioms", {
-        type: "get",
-        data: idiomsLanguage
+      $.ajax("/api/idioms/" + language, {
+        type: "get"
       }).then(
         function () {
           hideAndShow(homepageDiv, languageDiv);
@@ -216,3 +192,37 @@ $(document).ready(function () {
 
   });
 });
+
+//test function area ******************* v down here v
+console.log("test");
+
+var testFunction = function (event) {
+  event.preventDefault();
+  var id = "17";
+  var newIdiom = {
+    language: "1",
+    origin_idiom: "this is a test origin_idiom 1",
+    pronunciation: "this is a test pronunciation 1",
+    literal_meaning: "this is a test literal_meaning 1",
+    meaning: "this is a test meaning 1",
+    category: "this is a test category 1",
+    equevilant_id: id
+  };
+  console.log(newIdiom);
+  $.ajax("/api/idioms", {
+    type: "post",
+    data: newIdiom
+  }).then(
+    function (data) {
+      console.log(data);
+      // addIdiomSubmit.removeAttr("data-id");
+      // hideAndShow(addIdiomDiv, idiomDiv);
+      // need to run the "get specific idiom" function
+      // do things to show the new idiom as a card
+      location.reload();
+    }
+  );
+};
+
+testFunction();
+//test function area ******************* ^  up here  ^
