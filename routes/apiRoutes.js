@@ -108,11 +108,13 @@ module.exports = function (app) {
       });
   });
   //GET idioms by name
-  app.get("/api/idiomsbyName", function (req, res) {
+  app.get("/api/idiomsbyName/:name", function (req, res) {
+    var name = req.params.name;
+    name = name.replace(/\+/g, ' ');
     db.Idiom.findAll({
       limit: 10,
       where: {
-        origin_idiom: { [Op.like]: `%${req.body.name}%` }
+        origin_idiom: { [Op.like]: `%${name}%` }
       }
     })
       .then(function (idioms) {
