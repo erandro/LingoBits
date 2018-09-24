@@ -1,25 +1,25 @@
 $(document).ready(function () {
 
-  // assign values to all elements that are called
-  // cards
+  // # assign values to all elements that are called
+  // ## cards
   var homepageDiv = $("#home_page_div");
   var categoryDiv = $("#the_category_div");
   var languageDiv = $("#the_language_div");
   var idiomDiv = $("#the_idiom_div");
   var multiDiv = $("#multi_res_div");
   var addIdiomDiv = $("#add_page_div");
-  // header
+  // ## header
   var searchIdiomSubmit = $("#search_idiom_submit");
   var searchIdiomImput = $("#search_idiom_input");
-  // home gage card - category
+  // ## home gage card - category
   var categoryButton = $(".category_button");
   var searchCategorySubmit = $("#search_category_submit");
   var searchCategoryImput = $("#search_category_input");
-  // home gage card - language
+  // ## home gage card - language
   var languageButton = $(".language_button");
   var searchLanguageSubmit = $("#search_language_submit");
   var searchLanguageImput = $("#search_language_input");
-  // idiom card
+  // ## idiom card
   var addIdiomButton = $("#adding_button");
   var equivalentIdiom = $(".link_idiom");
   var idiomCardName = $("#idiom_card_name");
@@ -28,7 +28,7 @@ $(document).ready(function () {
   var idiomCardLiteralTrans = $("#idiom_card_literalTrans");
   var idiomCardMeaning = $("#idiom_card_meaning");
   var idiomCardLanguage = $("#idiom_card_language");
-  // add idiom card
+  // ## add idiom card
   var addIdiomSubmit = $("#submit_idiom");
   var formLanguage = $("#language_form");
   var formIdiom = $("#idiom_form");
@@ -38,9 +38,10 @@ $(document).ready(function () {
   var formCategory = $("#category_form"); // delete (pass value from idiom card)
 
   var idiomsNames = [];
+  var allCategories = [];
   var allLanguages = [0];
 
-  // Cards display changes
+  // # Cards display changes
   function hideAndShow(showTag) {
     if (showTag !== homepageDiv) {
       homepageDiv.addClass("hideDiv");
@@ -63,7 +64,7 @@ $(document).ready(function () {
     showTag.removeClass("hideDiv");
   }
 
-  // Autocomplete
+  // # Autocomplete
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -172,20 +173,31 @@ $(document).ready(function () {
   }
   autocomplete(document.getElementById("search_idiom_input"), idiomsNames);
 
-  // The API methods
+  // # show searched idiom 
+  function showSearchedIdiom(idiomObject) {
+    idiomCardName.text(idiomObject[0].origin_idiom);
+    idiomCardCategory.text(idiomObject[0].category);
+    idiomCardPronunciation.text(idiomObject[0].pronunciation);
+    idiomCardLiteralTrans.text(idiomObject[0].literal_meaning);
+    idiomCardMeaning.text(idiomObject[0].meaning);
+    idiomCardLanguage.attr("src", allLanguages[idiomObject[0].LanguageId].icon);
+  }
+
+  // # The API methods
   $(function () {
 
-    // show idiom's adding form
+    // ## Button functions
+    // ### show idiom's adding form
     addIdiomButton.on("click", function (event) {
       event.preventDefault();
-      // we should have the add button have an id of the idiom  
       var id = $(this).data("id");
-      var category =
-        hideAndShow(addIdiomDiv);
+      var category = $(this).data("category");
+      hideAndShow(addIdiomDiv);
       addIdiomSubmit.attr("data-id", id).attr("data-category", category);
     });
 
-    // "get" all idioms and push to an array
+    // ## Getting information when loading the page
+    // ### "get" all idioms and push to an array
     $.ajax("/api/idioms", {
       type: "get"
     }).then(
@@ -197,8 +209,7 @@ $(document).ready(function () {
     ).catch(function (err) {
       console.log(err);
     });
-
-    // "get" all languages and append to homepage drop-down
+    // ### "get" all languages and append to drop-downs
     $.ajax("/api/languages", {
       type: "get"
     }).then(
@@ -226,40 +237,25 @@ $(document).ready(function () {
     ).catch(function (err) {
       console.log(err);
     });
-
-    // show searched idiom 
-    function showSearchedIdiom(idiomObject) {
-      idiomCardName.text(idiomObject[0].origin_idiom);
-      idiomCardCategory.text(idiomObject[0].category);
-      idiomCardPronunciation.text(idiomObject[0].pronunciation);
-      idiomCardLiteralTrans.text(idiomObject[0].literal_meaning);
-      idiomCardMeaning.text(idiomObject[0].meaning);
-      idiomCardLanguage.attr("src", allLanguages[idiomObject[0].LanguageId].icon);
-    }
-
     // get all categories and append to homepage drop-down
-    /*$.ajax("/api/categories", {
+    $.ajax("/api/categories", {
       type: "get"
     }).then(
       function (data) {
         data.forEach(function (element) {
           searchCategoryImput.append(
-            `<option class="search_language_input"
-            data-id="${element.id}"
-            data-name="${element.language_name}"
-            data-abbreviation="${element.abbreviation}"
-            data-icon="${element.icon}"
-            >${element.language_name}</option>`
+            `<option class="search_Category_input">
+            ${element}
+            </option>`
           );
         });
       }
     ).catch(function (err) {
       console.log(err);
-    });*/
+    });
 
-    // ajax calls:
-
-    // create new idiom
+    // ## ajax calls:
+    // ### create new idiom
     addIdiomSubmit.on("click", function (event) {
       event.preventDefault();
       // we should have the add button have an id of the idiom
@@ -286,7 +282,7 @@ $(document).ready(function () {
       });
     });
 
-    // get all (or one) idioms - search by name
+    // ### get all (or one) idioms - search by name
     searchIdiomSubmit.on("click", function (event) {
       event.preventDefault();
       var name = searchIdiomImput.val().trim();
@@ -307,7 +303,7 @@ $(document).ready(function () {
       );
     });
 
-    // get specific idiom - by id
+    // ### get specific idiom - by id
     equivalentIdiom.on("click", function (event) {
       event.preventDefault();
       // we should have the equivalentIdiom button have an id of the idiom
@@ -321,7 +317,7 @@ $(document).ready(function () {
       );
     });
 
-    // get all idioms from specific category - search by category
+    // ### get all idioms from specific category - search by category
     categoryButton.on("click", function (event) {
       event.preventDefault();
       // we should have the category button have an name of the category  
@@ -349,7 +345,7 @@ $(document).ready(function () {
       );
     });
 
-    // get all idioms from specific language - search by language
+    // ### get all idioms from specific language - search by language
     languageButton.on("click", function (event) {
       event.preventDefault();
       // we should have the language button have an name of the language  
@@ -378,42 +374,3 @@ $(document).ready(function () {
 
   });
 });
-
-//test function area ******************* v down here v
-
-var testFunction = function () {
-  console.log("test");
-};
-
-testFunction();
-//test function area ******************* ^  up here  ^
-
-/*
-var testFunction = function (event) {
-  //event.preventDefault();
-  var id = "3";
-  var newIdiom = {
-    LanguageId: 1,
-    origin_idiom: "this is a test origin_idiom 1",
-    pronunciation: "this is a test pronunciation 1",
-    literal_meaning: "this is a test literal_meaning 1",
-    meaning: "this is a test meaning 1",
-    category: "this is a test category 1"
-  };
-  $.ajax("/api/idiom/" + id, {
-    type: "post",
-    data: newIdiom
-  }).then(
-    function (data) {
-      console.log(data);
-      // addIdiomSubmit.removeAttr("data-id");
-      // hideAndShow(idiomDiv);
-      // need to run the "get specific idiom" function
-      // do things to show the new idiom as a card
-      // location.reload();
-    }
-  ).catch(function (err) {
-    console.log(err);
-  });
-};
-*/

@@ -96,13 +96,8 @@
         <!-- Home Page - category -->
         <div class="container mb-5 catRow2">
             <div class="card-deck justify-content-center">
-                <div class="input-group mb-3" id="search_category_input">
-                    <select class="custom-select">
-                        <option selected>Select Topic</option>
-                        <option id="firstTopic" class="category_button" value="1">Food</option>
-                        <option id="secondTopic" class="category_button" value="2">Family</option>
-                        <option id="thirdTopic" class="category_button" value="3">Exclamations!</option>
-                        <option id="fourthTopic" class="category_button" value="4">Sayings</option>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="search_category_input">
                     </select>
                     <div class="input-group-append">
                         <button class="searchByTopic btn text-white btn-outline-secondary" type="button" id="search_category_submit">Search
@@ -212,7 +207,7 @@
                 <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
                     <div class="card-header">
                         <h3 class="card-title" id="idiom_card_name">test</h3>
-                        <button id="adding_button">got an equivalent idiom?</button>
+                        <button id="adding_button" data-id="" data-category="">got an equivalent idiom?</button>
                     </div>
 
                     <div class="card-body justify-content-center">
