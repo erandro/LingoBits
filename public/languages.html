@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito|Playfair+Display:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css">
 </head>
@@ -24,11 +25,9 @@
         <div class="container">
 
             <div class="row navRow">
-                <div class="col-sm-1 column1">
+                <div class="col-sm-3 column1">
                     <div class="headTitle">
-                        <a href="homepage.html">
-                            <img src="./images/lingobits_logo.JPG" alt="Logo" style="width:150px;height:150px;border:0;">
-                        </a>
+                        <img src="./images/lingobits_logo.JPG" width="110px" height="110px">
                     </div>
                 </div>
                 <div class="col-sm-7 column2">
@@ -49,27 +48,228 @@
     <br>
     <br>
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-                <div class="hexagon"></div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="hexagon"></div>
-            </div>
-            <div class="col-xs-6 col-md-4">
-                <div class="hexagon"></div>
+    <!-- Home Page -->
+    <div id="home_page_div">
+        <!-- Home Page - language -->
+        <div class="container mb-5">
+            <div class="row mb-10  langRow1">
+                <div class="col sm-md-12">
+                    <div class="card-deck justify-content-center inputbox">
+                        <div class="input-group mb-3 input_lang">
+                            <select class="custom-select" id="search_language_input">
+                            </select>
+                            <div class="input-group-append">
+                                <button class="btn text-white btn-outline-secondary language_button" id="search_language_submit"
+                                    type="button">Language Name</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Home Page - language - most popular -->
+                <div class="container">
+                    <div class="card-deck justify-content-center mb-3">
+                        <h3>Most Popular Languages</h3>
+                    </div>
+                </div>
+                <br>
+                <div class="container category_button">
+                    <div class="row justify-content-center">
+                        <!-- Home Page - language - most popular - #1 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center">
+                            <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button">עִברִית
+                            </button>
+                        </div>
+                        <!-- Home Page - language - most popular - #2 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center">
+                            <button id="langBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button">Tagalog
+                            </button>
+                        </div>
+                        <!-- Home Page - language - most popular - #3 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center">
+                            <button id="langBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2 language_button">عربى
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </Div>
 
+        <!-- Home Page - category -->
+        <div class="container mb-5 catRow2">
+            <div class="card-deck justify-content-center">
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="search_category_input">
+                    </select>
+                    <div class="input-group-append">
+                        <button class="searchByTopic btn text-white btn-outline-secondary" type="button" id="search_category_submit">Search
+                            by Topic</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Home Page - category - most popular -->
+            <div class="container mb-3 ">
+                <div class="card-deck justify-content-center mb-3">
+                    <h3>Most Popular Topics</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container justify-content-center">
+                    <div class="row justify-content-center">
+                        <!-- Home Page - category - most popular - #1 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center category_button">
+                            <button id="categoryBtn1" type="button" class="btn btn-lg roundButton text-white text-center mr-2">Sayings
+                            </button>
+                        </div>
+                        <!-- Home Page - category - most popular - #2 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center">
+                            <button id="categoryBtn2" type="button" class="btn btn-lg roundButton text-white text-center mr-2">Family
+                            </button>
+                        </div>
+                        <!-- Home Page - category - most popular - #3 -->
+                        <div class="col-6 col-md-4 row card-deck justify-content-center">
+                            <button id="categoryBtn3" type="button" class="btn btn-lg roundButton text-white text-center mr-2">Food
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Idiom Card -->
+    <div class="container" id="the_idiom_div">
+        <div class="row rowHex">
+            <div class="col-md-10">
+                <div class="containerHex hexText">
+                    <div class="centered">
+                        <h3 class="card-title" id="idiom_card_name">test</h3>
+                        <button id="adding_button" data-id="" data-category=""><i class="fas fa-plus-circle fa-lg"
+                                aria-hidden="true"></i></button>
+                        <button id="copy_button" data-id="" data-category=""><i class="far fa-copy fa-2x" aria-hidden="true"></i></button>
+                    </div>
 
+                    <div class="card-body justify-content-center">
+                        <p class="card-title">Pronunciation:</p>
+                        <p id="idiom_card_pronunciation"></p>
+                        <p class="card-text">Literal Translation:</p>
+                        <p id="idiom_card_literalTrans"></p>
+                        <p class="card-text">Meaning:</p>
+                        <p id="idiom_card_meaning"></p>
+                        <p class="card-title">Category:</p>
+                        <p id="idiom_card_category"></p>
+                        <img id="idiom_card_language" src="" alt="language marked by flag">
+                    </div>
+                    <div class="card-footer text-white card-body justify-content-left">
+                        <h3 class="card-title" id="connections">Connections:</h3>
+                        <p class="card-title" id="connectionOne">Hebrew</p>
+                        <p class="card-title" id="connectionTwo">Arabic</p>
+                        <p class="card-title" id="connectionThree">French</p>
+                    </div>
+                    <div class="container">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Multiple Results Mini Cards -->
+    <div class="hideDiv" id="multi_res_div">
+        <div class="container justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col align-self-center card-deck justify-content-center">
+                    <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
+                        <div class="card-header">
+                            <h3 class="card-title" id="???">Idiom in original language</h3>
+                        </div>
+                        <div class="card-body justify-content-center">
+                            <p class="card-text" style="font-weight: bold">Meaning:</p>
+                            <p id="meaning"></p>
+                        </div>
+                        <div class="container">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Idiom Form Card -->
+    <div class="container" id="add_page_div">
+        <div class="row rowsHex">
+            <div class="col-xs-10 col-md-10">
+                <div class="containerHex hexText">
+                    <div class="centered">
+                        <h2 class=" card-title" id="OrigIdiom">
+                            Add a new idiom
+                        </h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8 form-group">
+                                    <label for="dropDownLang">
+                                        Origin Language of the Idiom
+                                    </label>
+                                    <select required id="language_form" class="form-control is-valid" placeholder="Select a language">
+                                    </select>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8 form-group">
+                                    <label for=pronunciation>Idiom (in original language)</label>
+                                    <textarea required type="text" class="form-control" rows="2" placeholder='Example: "Can you dig it?"'></textarea>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8 form-group">
+                                    <label for=pronunciation>Pronunciation</label>
+                                    <textarea type="text" class="form-control" rows="2" placeholder="ken yu dig it"></textarea>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8 form-group">
+                                    <label for=pronunciation>Literal Translation</label>
+                                    <textarea required class="form-control" rows="2" placeholder='Example: Asking someone if they enjoy something'></textarea>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-8 form-group">
+                                    <label for="Meaning">Meaning</label>
+                                    <textarea required class="form-control" rows="4" placeholder="Meaning/Connotation-Example: Can you dig it is slang for 'Do you understand?' and it i'"></textarea>
+                                </div>
+                                <div class="col-2"></div>
+                            </div>
+                            <button type="button" class="mb-7 text-white btn btn-lg newIdiomSub">Submit
+                                New Idiom</button>
+                            <div class="form-group"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <br>
+    <br>
     <footer class="footer mx-auto">
         <p>copyright © 2018</p>
     </footer>
+
+    <!-- JQuery -->
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <!-- javascript -->
+    <script src="js/index.js"></script>
 
 </body>
 

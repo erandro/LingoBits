@@ -1,8 +1,10 @@
 .list-group-item {
   line-height: 2.5;
 }
+
 body {
   background-image: url(../images/Unique_World_Map_d.jpg);
+  font-family: 'Quicksand', sans-serif;
   
 }
 #home_page_butto{
@@ -126,6 +128,7 @@ h6 {
   color: white;
   margin: 20px;
 }
+
 p {
   color: white;
   margin: 20px;
@@ -140,6 +143,7 @@ p {
   left: 71px;
   top: 38px;
 }
+
 .column2{
   display: inline-flex;
   
@@ -159,10 +163,8 @@ footer {
   width: 100%;
   background-color: #d8e1e2;
 }
-/* haddassah CSS */
-body{
-  font-family: 'Quicksand', sans-serif;
-}
+/* haddassah's CSS */
+
 .roundButton {
   border-radius: 12px;
   background-color: #35acbd !important;
@@ -301,7 +303,6 @@ body{
   border-left: solid 5px #ccfdf3;
   border-right: solid 5px #ccfdf3;
   opacity: 0.7 !important;
-  font: blue; 
 }
 
 .hexagon:before,
@@ -385,8 +386,7 @@ body{
 .containerHex {
   width: 450px;
   height: 450px;
-  color: white;
-  
+  color: #15444b !important;
 }
 .rowHex {
   width: 100%;
@@ -408,7 +408,7 @@ body{
 .hexText{
   position: relative;
   text-align: center;
-  color: #15444b;
+  color: #15444b !important;
   background: none;
 }
 
@@ -429,4 +429,8 @@ body{
   content: "";
   clear: both;
   display: table;
+}
+
+p {
+  color: #15444b !important; 
 }
