@@ -15,17 +15,21 @@ position: fixed;
 .langRow1 {
   position: relative;
   background-color: #cdf3f0;
-  z-index: 2;
+  z-index: -2;
   /* opacity: 0.6; */
   padding-bottom: 20px;
+  border-radius: 5px;
   font-family: 'Nunito', sans-serif;
  color: rgb(75, 77, 77);
 }
 
+.langRow1 {
 
+}
 .catRow2 {
   font-family: 'Nunito', sans-serif;
   background-color:  #cdf3f0;
+  border-radius: 5px;
   padding-bottom: 20px;
   color: rgb(75, 77, 77);
 }
@@ -254,3 +258,90 @@ body{
       background-color: DodgerBlue !important; 
       color: #ffffff; 
     }
+
+
+
+/* HEXAGON */
+.hexagon {
+  position: relative;
+  width: 400px; 
+  height: 230.94px;
+  background-color: #64C7CC;
+  margin: 115.47px 0;
+  border-left: solid 5px #ccfdf3;
+  border-right: solid 5px #ccfdf3;
+  opacity: 0.7 !important;
+  font: blue; 
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 282.84px;
+  height: 282.84px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 53.5786px;
+}
+
+.hexagon:before {
+  top: -141.4214px;
+  border-top: solid 7.0711px #ccfdf3;
+  border-right: solid 7.0711px #ccfdf3;
+}
+
+.hexagon:after {
+  bottom: -141.4214px;
+  border-bottom: solid 7.0711px #ccfdf3;
+  border-left: solid 7.0711px #ccfdf3;
+}
+
+
+
+/* TESTING FOR HEX */
+/* Container holding the image and the text */
+.containerHex {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

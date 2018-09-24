@@ -1,5 +1,6 @@
 use idioms_db;
 
+
 insert into Languages
     (language_name, abbreviation, icon)
 values
