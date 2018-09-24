@@ -136,7 +136,7 @@ module.exports = function (app) {
       });
   });
   // Get all categories
-  app.get("/api/Categories", function (req, res) {
+  app.get("/api/categories", function (req, res) {
     db.Idiom.findAll({
       attributes: ['category']
     })
