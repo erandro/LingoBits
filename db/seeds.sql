@@ -20,7 +20,7 @@ insert into Idioms (origin_idiom, pronunciation, literal_meaning, meaning, categ
 -- 2
 ("Put to shame", "put tu sheim", "Put to shame", "to cause to suffer shame or disgrace", "shame"),
 ("הלְבִּין פְּנֵיו בָּרַבִּים", "helbin panav be-rabim", "Bleached his face in the present of many", "To insulted one's friend in the presence of others, making his face pale (white) with shame", "shame"),
-("Pahiya mo sya", "pah-hi-ya mo syah", "Put to shame", "to embarassed him", "shame"),
+("Pahiya mo sya", "pah-hi-ya mo syah", "Put to shame", "to embarassed him/her", "shame"),
 -- 3
 ("מַטְבְּע לָשׁוֹן", "matbe-a lashon", "Tongue's coin, Language currency", "Phrase or an idiom", "phrase"),
 -- 4

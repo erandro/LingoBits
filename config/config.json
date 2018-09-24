@@ -5,7 +5,9 @@
     "database": "idioms_db",
     "host": "localhost",
     "dialect": "mysql",
-    "logging": false
+    "dialectOptions": {
+      "socketPath": "/Applications/MAMP/tmp/mysql/mysql.sock"
+    }
   },
   "test": {
     "username": "root",
