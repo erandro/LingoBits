@@ -3,6 +3,12 @@
 }
 body {
   background-image: url(../images/Unique_World_Map_d.jpg);
+  
+}
+#home_page_butto{
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
 }
 .navRow{
   width: 100%;
@@ -52,7 +58,8 @@ nav a {
 
 .searchBox { 
   width: 100%;
-  
+  top: 35px;
+  left: -15px;
 }
 .searchBut {
   right: -70px;
@@ -66,6 +73,7 @@ nav a {
   background-color: #425de6!important;
 }
 h2 {
+  padding-top: 10px;
   font-weight: bold;
   font-family: 'Nunito', sans-serif;
 }
@@ -78,6 +86,23 @@ h3 {
 .hideDiv {
   display: none;
 }
+#adding_button {
+  border: 0;
+  background: none;
+  color: white;
+  position: relative;
+  left: 390px;
+  top: -57px;
+}
+#copy_button{
+  border: 0;
+  background: none;
+  color: white;
+  position: relative;
+  left: 397px;
+  top: -50px;
+}
+
 /* .worldimg {
   width: 100%;
   height: 470px;
@@ -106,16 +131,14 @@ p {
   margin: 20px;
 }
 
-column1{
-  display: inline-flex;
-  right: 4px;
-  top: -5px
+.column1{
+  left: 62px;
 }
 
 .column3{
   display: inline-flex;
-  left: 101px;
-  top: 8px;
+  left: 71px;
+  top: 38px;
 }
 .column2{
   display: inline-flex;
@@ -193,6 +216,8 @@ body{
 
 
 
+
+
 /* @media (max-width: 979px){
 .headTitle {
     width: 200px;
@@ -231,7 +256,7 @@ body{
     
     .autocomplete-items {
       position: absolute;
-      border: 1px solid #d4d4d4;
+      /* border: 1px solid #d4d4d4; */ 
       border-bottom: none;
       border-top: none;
       z-index: 99;
@@ -246,6 +271,11 @@ body{
       cursor: pointer;
       background-color: #fff; 
       border-bottom: 1px solid #d4d4d4; 
+      width: 482px;
+      display: inline-flex;
+      position: relative;
+      left: 15px;
+      border-radius: 5px;
     }
     
     .autocomplete-items div:hover {
