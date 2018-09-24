@@ -90,7 +90,7 @@ values
 
 
 
-INSERT INTO links
+INSERT INTO Links
     (idiom1Id, idiom2Id, rating)
 VALUES
     -- 1
