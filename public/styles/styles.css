@@ -9,6 +9,7 @@ body {
   width: 40px;
   height: 30px;
   border-radius: 5px;
+  color: #257884;
 }
 .navRow{
   width: 100%;
@@ -218,35 +219,60 @@ body{
 
 
 
-/* @media (max-width: 979px){
-.headTitle {
-    width: 200px;
+@media (max-width: 979px){
+.autocomplete-items div {
+    width: 100%;
     float: right;
 }
 .link1 {
   width: 100%;
 }
+.searchBox {
+  width: 100%;
+}
 }
 
 @media (max-width: 768px){
-  .headTitle {
-      width: 200px;
+  .autocomplete-items div {
+      width: 342px;
       float: right;
   }
   .link1 {
     width: 80%;
   }
+  .searchBox {
+    width: 70%;
+    float: left;
+  
+  }
+  .headTitle {
+    width: 70%;
+    float: right;
+    align-content: center;
+  }
   }
   @media (max-width: 567px){
+    .autocomplete-items div {
+      width: 300px;;
+      top: 0;
+      left: -16px;
+
+    }
+    .searchBox {
+      width: 40%;
+      float: left;  
+    }
     .headTitle {
-        width: 200px;
-        float: right;
+      width: 40%;
+      float: right;
+      align-content: center;
     }
     .link1 {
       width: 50%;
         float: right;
     }
-    } */
+
+    }
 
     .card-title {
       font-weight: bold;
@@ -271,7 +297,8 @@ body{
       cursor: pointer;
       background-color: #fff; 
       border-bottom: 1px solid #d4d4d4; 
-      width: 482px;
+      width: 588px;
+      top: -67px;
       display: inline-flex;
       position: relative;
       left: 15px;
