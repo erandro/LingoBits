@@ -9,7 +9,6 @@ module.exports = function (app) {
         res.status(200).json(idioms);
       })
       .catch(function (err) {
-        console.log("ERRRRRRRRRRRR");
         console.log(err);
         res.send(err);
       });
@@ -127,7 +126,6 @@ module.exports = function (app) {
   app.get("/api/languages", function (req, res) {
     db.Language.findAll({})
       .then(function (languages) {
-        console.log("Retrieved: " + languages);
         res.status(200).json(languages);
       })
       .catch(function (err) {
@@ -156,7 +154,6 @@ module.exports = function (app) {
         res.json(language);
       })
       .catch(function (err) {
-        console.log("ERRRRRRRRRORRRR");
         console.log(err);
         res.send(err);
       });
