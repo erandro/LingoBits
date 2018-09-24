@@ -375,3 +375,58 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+
+/* from haddassah */
+
+/* TESTING FOR HEX */
+/* Container holding the image and the text */
+.containerHex {
+  width: 450px;
+  height: 450px;
+  color: white;
+  
+}
+.rowHex {
+  width: 100%;
+}
+.containerHex::after {
+  background: url("../images/hexagon-b.png");
+  background-size: 450px 450px;
+  background-repeat: no-repeat;
+  content: "";
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.hexText{
+  position: relative;
+  text-align: center;
+  color: #15444b;
+  background: none;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
