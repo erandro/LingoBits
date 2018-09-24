@@ -11,6 +11,7 @@ $(document).ready(function () {
   // ## header
   var searchIdiomSubmit = $("#search_idiom_submit");
   var searchIdiomImput = $("#search_idiom_input");
+  var homepageButton = $("#home_page_button");
   // ## home gage card - category
   var categoryButton = $(".category_button");
   var searchCategorySubmit = $("#search_category_submit");
@@ -19,6 +20,9 @@ $(document).ready(function () {
   var languageButton = $(".language_button");
   var searchLanguageSubmit = $("#search_language_submit");
   var searchLanguageImput = $("#search_language_input");
+  // ## multi idioms card
+  var multiIdiomHolder = $("#multi_idiom_holder");
+  var multiIidiomCard = $(".multi_idiom_card")
   // ## idiom card
   var addIdiomButton = $("#adding_button");
   var equivalentIdiom = $(".link_idiom");
@@ -41,7 +45,8 @@ $(document).ready(function () {
   var allCategories = [];
   var allLanguages = [0];
 
-  // # Cards display changes
+  // # General functions
+  // ## Cards display changes
   function hideAndShow(showTag) {
     if (showTag !== homepageDiv) {
       homepageDiv.addClass("hideDiv");
@@ -63,8 +68,7 @@ $(document).ready(function () {
     }
     showTag.removeClass("hideDiv");
   }
-
-  // # Autocomplete
+  // ## Autocomplete
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -170,10 +174,9 @@ $(document).ready(function () {
     document.addEventListener("click", function (e) {
       closeAllLists(e.target);
     });
-  }
+  };
   autocomplete(document.getElementById("search_idiom_input"), idiomsNames);
-
-  // # show searched idiom 
+  // ## Show searched idiom 
   function showSearchedIdiom(idiomObject) {
     idiomCardName.text(idiomObject[0].origin_idiom);
     idiomCardCategory.text(idiomObject[0].category);
@@ -181,7 +184,35 @@ $(document).ready(function () {
     idiomCardLiteralTrans.text(idiomObject[0].literal_meaning);
     idiomCardMeaning.text(idiomObject[0].meaning);
     idiomCardLanguage.attr("src", allLanguages[idiomObject[0].LanguageId].icon);
-  }
+    $(addIdiomButton).attr("data-id", idiomObject[0].id).attr("data-category", idiomObject[0].category)
+  };
+  // ## Show all searched idioms
+  function showMutiSearchedIdioms(multiIdiomObject) {
+    multiIdiomHolder.empty();
+    multiIdiomObject.forEach(function (element) {
+      multiIdiomHolder.append(`<div class="multi_idiom_card col align-self-center card-deck justify-content-center"
+      data-id="${element.id}"
+      data-name="${element.origin_idiom}"
+      data-category="${element.category}"
+      data-pronunciation="${element.pronunciation}"
+      data-literal="${element.literal_meaning}"
+      data-meaning="${element.meaning}"
+      data-languageid="${element.LanguageId}">
+            <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
+              <div class="card-header">
+                <h3 class="card-title">${element.origin_idiom}</h3>
+              </div>
+              <div class="card-body justify-content-center">
+                <p class="card-text" style="font-weight: bold">Meaning:</p>
+                <p class="meaning">${element.meaning}</p>
+              </div>
+              <div class="container">
+                <h1></h1>
+              </div>
+            </div>
+          </div>`)
+    });
+  };
 
   // # The API methods
   $(function () {
@@ -195,6 +226,25 @@ $(document).ready(function () {
       hideAndShow(addIdiomDiv);
       addIdiomSubmit.attr("data-id", id).attr("data-category", category);
     });
+    // ### show homepage
+    homepageButton.on("click", function (event) {
+      event.preventDefault();
+      hideAndShow(homepageDiv);
+    });
+    // ### show idiom (from multi idioms)
+    $(document).on("click", ".multi_idiom_card", function (event) {
+      event.preventDefault();
+      idiomCardName.text($(this).data("name"));
+      idiomCardCategory.text($(this).data("category"));
+      idiomCardPronunciation.text($(this).data("pronunciation"));
+      idiomCardLiteralTrans.text($(this).data("literal_meaning"));
+      console.log($(this).data("meaning"));
+      idiomCardMeaning.text($(this).data("meaning"));
+      console.log($(this).data("languageid"));
+      idiomCardLanguage.attr("src", allLanguages[$(this).data("languageid")].icon);
+      $(addIdiomButton).attr("data-id", $(this).data("id")).attr("data-category", $(this).data("category"))
+      hideAndShow(idiomDiv);
+    })
 
     // ## Getting information when loading the page
     // ### "get" all idioms and push to an array
@@ -237,12 +287,13 @@ $(document).ready(function () {
     ).catch(function (err) {
       console.log(err);
     });
-    // get all categories and append to homepage drop-down
+    // ### "get" all categories and append to homepage drop-down
     $.ajax("/api/categories", {
       type: "get"
     }).then(
       function (data) {
         data.forEach(function (element) {
+          allCategories.push(element);
           searchCategoryImput.append(
             `<option class="search_Category_input">
             ${element}
@@ -292,12 +343,13 @@ $(document).ready(function () {
       }).then(
         function (data) {
           console.log(data);
-          // I'm getting an array with objects
+          $(searchIdiomImput).val("");
           if (data.length === 1) {
             hideAndShow(idiomDiv);
             showSearchedIdiom(data)
           } else {
             hideAndShow(multiDiv);
+            showMutiSearchedIdioms(data)
           }
         }
       );
