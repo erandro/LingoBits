@@ -141,7 +141,7 @@ module.exports = function (app) {
       attributes: ['category']
     })
       .then(function (idiomsdb) {
-        var foundCategories = [];
+       var foundCategories = [];
         for (idiom of idiomsdb) {
           var categoriesInIdiom = idiom.category.split(" ");
           for (category of categoriesInIdiom) {
