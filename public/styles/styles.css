@@ -9,6 +9,8 @@ body {
 }
 nav {
 height: 150px;
+position: fixed;
+
 }
 .langRow1 {
   position: relative;
@@ -52,12 +54,16 @@ nav a {
   right: -70px;
   position: absolute;
   top: -1px;
-  background-color: #425de6!important;
+  background-color: #257884!important;
 } 
 
 .search_idiom_submit {
 
   background-color: #425de6!important;
+}
+h2 {
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 h3 {
   font-family: 'Nunito', sans-serif;
@@ -134,7 +140,52 @@ body{
   border-radius: 12px;
   background-color: #35acbd !important;
 }
-
+.language_button{
+  max-width: 20rem; 
+  background-color: #35acbd !important;
+}
+#langBtn1
+#langBtn2
+#langBtn3{
+  background-color: #35acbd !important;
+}
+.searchByTopic{
+  max-width: 20rem; 
+  background-color: #35acbd !important;
+}
+#categoryBtn1
+#categoryBtn2
+#categoryBtn3{
+  background-color: #35acbd !important;
+}
+.resultCard{
+  max-width: 60rem; 
+  background-color: #85cdd7 !important;
+  font-family: 'Nunito', sans-serif;
+}
+.card-header{
+  background-color: #35acbd;
+  font-family: 'Nunito', sans-serif;
+}
+.card-body{
+  background-color: #29c7d6;
+  font-family: 'Nunito', sans-serif;
+}
+.newIdiom{
+  background-color: #35acbd !important;
+  font-family: 'Nunito', sans-serif;
+}
+.newIdiomSub{
+  background-color: #257884;
+  font-family: 'Nunito', sans-serif;
+}
+.newIdiomBut{
+  background-color: #257884;
+  font-family: 'Nunito', sans-serif;
+}
+.addIdiom {
+  background-color: #35acbd !important;
+}
 
 
 
