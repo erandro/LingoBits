@@ -107,11 +107,14 @@ module.exports = function (app) {
         res.send(err);
       });
   });
-  app.get("/api/idiomsbyName", function (req, res) {
+  //GET idioms by name
+  app.get("/api/idiomsbyName/:name", function (req, res) {
+    var name = req.params.name;
+    name = name.replace(/\+/g, ' ');
     db.Idiom.findAll({
       limit: 10,
       where: {
-        origin_idiom: { [Op.like]: `%${req.body.name}%` }
+        origin_idiom: { [Op.like]: `%${name}%` }
       }
     })
       .then(function (idioms) {
@@ -132,8 +135,30 @@ module.exports = function (app) {
         res.send(err);
       });
   });
-  //(TODO)GET idioms by text
-  //
+  // Get all categories
+  app.get("/api/categories", function (req, res) {
+    db.Idiom.findAll({
+      attributes: ['category']
+    })
+      .then(function (idiomsdb) {
+        var foundCategories = [];
+        for (idiom of idiomsdb) {
+          var categoriesInIdiom = idiom.category.split(" ");
+          for (category of categoriesInIdiom) {
+            var trimmedCategory = category.trim();
+            if (trimmedCategory.length > 1 && !foundCategories.includes(trimmedCategory)) {
+              foundCategories.push(trimmedCategory);
+            }
+          }
+        }
+        res.status(200).json(foundCategories);
+      })
+      .catch(function (err) {
+        console.log("ERRRRRRRRRRRR");
+        console.log(err);
+        res.send(err);
+      });
+  });
   // POST a new idiom
   app.post("/api/idioms", function (req, res) {
     var idiom = req.body;

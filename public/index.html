@@ -152,17 +152,16 @@
             <div class="col align-self-center card-deck justify-content-center">
                 <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #85cdd7 !important;">
                     <div class="card-header" style=" background-color: #9ad5de">
-                        <h1 class="card-title" id="OrigIdiom"></h1><i class="fas fa-plus-circle fa-lg justify-content-right"
-                            id="adding_button"></i>
+                        <h1 class="card-title" id="OrigIdiom"></h1><i class="fas fa-plus-circle fa-lg justify-content-right"></i>
                     </div>
 
                     <div class="card-body justify-content-center">
                         <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p id="pronunciation"></p>
+                        <p class="pronunciation"></p>
                         <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p id="literalTrans"></p>
+                        <p class="literalTrans"></p>
                         <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p id="meaning"></p>
+                        <p class="meaning"></p>
                     </div>
                     <div class="card-footer text-white card-body justify-content-left">
                         <h3 class="card-title" id="connections">Connections:</h3>
@@ -190,11 +189,11 @@
 
                     <div class="card-body justify-content-center">
                         <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p id="pronunciation"></p>
+                        <p class="pronunciation"></p>
                         <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p id="literalTrans"></p>
+                        <p class="literalTrans"></p>
                         <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p id="meaning"></p>
+                        <p class="meaning"></p>
                     </div>
                     <div class="card-footer text-white card-body justify-content-left">
                         <h3 class="card-title" id="connections">Connections:</h3>
@@ -215,18 +214,22 @@
     <div class="container justify-content-center hideDiv" id="the_idiom_div">
         <div class="row justify-content-center">
             <div class="col align-self-center card-deck justify-content-center">
-                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 " style="max-width: 60rem; background-color: #59bad8 !important;">
-                    <div class="card-header" style=" background-color: #35a0b1">
-                        <h3 class="card-title" id="OrigIdiom"></h3><i class="fas fa-plus-circle fa-lg justify-content-right"></i>
+                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
+                    <div class="card-header">
+                        <h3 class="card-title" id="idiom_card_name">test</h3>
+                        <button id="adding_button">got an equivalent idiom?</button>
                     </div>
 
                     <div class="card-body justify-content-center">
-                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p id="pronunciation"></p>
-                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p id="literalTrans"></p>
-                        <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p id="meaning"></p>
+                        <p class="card-title">Pronunciation:</p>
+                        <p id="idiom_card_pronunciation"></p>
+                        <p class="card-text">Literal Translation:</p>
+                        <p id="idiom_card_literalTrans"></p>
+                        <p class="card-text">Meaning:</p>
+                        <p id="idiom_card_meaning"></p>
+                        <p class="card-title">Category:</p>
+                        <p id="idiom_card_category"></p>
+                        <img id="idiom_card_language" src="" alt="language marked by flag">
                     </div>
                     <div class="card-footer text-white card-body justify-content-left">
                         <h3 class="card-title" id="connections">Connections:</h3>
@@ -270,12 +273,15 @@
             <div class="row justify-content-center">
                 <div class="col align-self-center card-deck justify-content-center">
                     <div class="card border-dark mb-3 text-white text-center" style="background-color: #35acbd !important;">
-                        <h1 class=" card-title" id="OrigIdiom">Add a new idiom</h1>
+                        <h1 class=" card-title" id="OrigIdiom">
+                            Add a new idiom
+                        </h1>
                         <form>
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-8 form-group">
-                                    <label for="dropDownLang">Origin Language of the Idiom
+                                    <label for="dropDownLang">
+                                        Origin Language of the Idiom
                                     </label>
                                     <select required id="language_form" class="form-control is-valid" placeholder="Select a language">
                                     </select>
@@ -285,7 +291,7 @@
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-8 form-group">
-                                    <label for=pronunciation>Idiom in original language</label>
+                                    <label for=pronunciation>Idiom (in original language)</label>
                                     <textarea required type="text" class="form-control" rows="2" placeholder='Example: "Can you dig it?"'></textarea>
                                 </div>
                                 <div class="col-2"></div>
@@ -294,7 +300,7 @@
                                 <div class="col-2"></div>
                                 <div class="col-8 form-group">
                                     <label for=pronunciation>Pronunciation</label>
-                                    <textarea type="text" class="form-control" rows="2" placeholder="pro-nun-see-ay-shun"></textarea>
+                                    <textarea type="text" class="form-control" rows="2" placeholder="ken yu dig it"></textarea>
                                 </div>
                                 <div class="col-2"></div>
                             </div>
@@ -302,7 +308,7 @@
                                 <div class="col-2"></div>
                                 <div class="col-8 form-group">
                                     <label for=pronunciation>Literal Translation</label>
-                                    <textarea required class="form-control" rows="2" placeholder='Example: Can you shovel something?'></textarea>
+                                    <textarea required class="form-control" rows="2" placeholder='Example: Asking someone if they enjoy something'></textarea>
                                 </div>
                                 <div class="col-2"></div>
                             </div>

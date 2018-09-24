@@ -166,7 +166,9 @@ body{
     }
     } */
 
-
+    .card-title {
+      font-weight: bold;
+    }
 
     /* autocomplete style */
     

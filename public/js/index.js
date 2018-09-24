@@ -22,6 +22,12 @@ $(document).ready(function () {
   // idiom card
   var addIdiomButton = $("#adding_button");
   var equivalentIdiom = $(".link_idiom");
+  var idiomCardName = $("#idiom_card_name");
+  var idiomCardCategory = $("#idiom_card_category");
+  var idiomCardPronunciation = $("#idiom_card_pronunciation");
+  var idiomCardLiteralTrans = $("#idiom_card_literalTrans");
+  var idiomCardMeaning = $("#idiom_card_meaning");
+  var idiomCardLanguage = $("#idiom_card_language");
   // add idiom card
   var addIdiomSubmit = $("#submit_idiom");
   var formLanguage = $("#language_form");
@@ -30,6 +36,9 @@ $(document).ready(function () {
   var formLiteral = $("#literal_form");
   var formMeaning = $("#meaning_form");
   var formCategory = $("#category_form"); // delete (pass value from idiom card)
+
+  var idiomsNames = [];
+  var allLanguages = [0];
 
   // Cards display changes
   function hideAndShow(showTag) {
@@ -161,7 +170,6 @@ $(document).ready(function () {
       closeAllLists(e.target);
     });
   }
-  var idiomsNames = [];
   autocomplete(document.getElementById("search_idiom_input"), idiomsNames);
 
   // The API methods
@@ -196,6 +204,7 @@ $(document).ready(function () {
     }).then(
       function (data) {
         data.forEach(function (element) {
+          allLanguages.push(element);
           searchLanguageImput.append(
             `<option class="search_language_input"
             data-id="${element.id}"
@@ -217,6 +226,16 @@ $(document).ready(function () {
     ).catch(function (err) {
       console.log(err);
     });
+
+    // show searched idiom 
+    function showSearchedIdiom(idiomObject) {
+      idiomCardName.text(idiomObject[0].origin_idiom);
+      idiomCardCategory.text(idiomObject[0].category);
+      idiomCardPronunciation.text(idiomObject[0].pronunciation);
+      idiomCardLiteralTrans.text(idiomObject[0].literal_meaning);
+      idiomCardMeaning.text(idiomObject[0].meaning);
+      idiomCardLanguage.attr("src", allLanguages[idiomObject[0].LanguageId].icon);
+    }
 
     // get all categories and append to homepage drop-down
     /*$.ajax("/api/categories", {
@@ -270,17 +289,20 @@ $(document).ready(function () {
     // get all (or one) idioms - search by name
     searchIdiomSubmit.on("click", function (event) {
       event.preventDefault();
-      var name = searchIdiomImput.replace(/\s+/g, "+");
-      $.ajax("/api/idiomsbyName" + name, {
+      var name = searchIdiomImput.val().trim();
+      name = name.replace(/\s+/g, '+');
+      $.ajax("/api/idiomsbyName/" + name, {
         type: "get"
       }).then(
-        function () {
-          hideAndShow(idiomDiv);
+        function (data) {
+          console.log(data);
           // I'm getting an array with objects
-          // if this array lengh === 1 
-          // Show idiomDiv
-          // if this array lengh > 1 
-          // Show idiomsDiv
+          if (data.length === 1) {
+            hideAndShow(idiomDiv);
+            showSearchedIdiom(data)
+          } else {
+            hideAndShow(multiDiv);
+          }
         }
       );
     });
