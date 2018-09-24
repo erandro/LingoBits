@@ -71,7 +71,23 @@ values
     -- 17
     ("تحت أمرك", "Taht amrak", "under your command", "I will do what you say", "obedience", 13),
     -- 18
-    ("Your wish is my command", "your wish is my command", "I'll do whatever you say", "Being ready to do whatever they want", "obedience", 1);
+    ("Your wish is my command", "your wish is my command", "I'll do whatever you say", "Being ready to do whatever they want", "obedience", 1),
+    -- 19
+    ("Hit the books", "Hit the books", "physically hit, punch or slap your reading books", "It simply means “to study,” and is a way of telling your friends that you’re going to study.", "study work read", 1),
+    -- 20
+    ("Hit the sack", "Hit the sack", "physically hitting or beating a sack (a large bag usually used for carrying things in bulk such as flour, rice or even soil)", "means to go to bed, and you’d use this to tell your friends or family that you’re really tired, so you’re going to sleep.", "study work read", 1),
+    -- 21
+    ("Twist someone’s arm", "Twist someone’s arm", "to take a person’s arm and turn it around, which could be really painful", "someone has done a great job of convincing you to do something you might not have wanted to to do", "conflict coerce force", 1),
+    -- 22
+    ("يلوى ذراعه", "Yalwy zeraoh", "twist someone's arm", "Force or coerce someone to do something against their will", "obedience", 13),
+    -- 23
+    ("Born with a silver spoon in one’s mouth", "Born with a silver spoon in one’s mouth ", "put a spoon made of silver in one's mouth", "Someone who comes from a wealthy and successful family", "rich", 1),
+
+    -- 24
+    ("مولود فى فمه ملعقة من ذهب", "mawlood fee famohoo mal3qah men zahab", "to have a spoon made of gold in ones mouth", "Someone who comes from a wealthy and successful family", "obedience", 13);
+
+
+
 
 
 INSERT INTO links
@@ -82,4 +98,8 @@ VALUES
     -- 2
     (15, 16, 0),
     -- 3
-    (18, 17, 0);
+    (18, 17, 0),
+    -- 4
+    (22, 21, 0),
+    -- 5
+    (24, 25, 0);
