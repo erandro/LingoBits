@@ -53,7 +53,7 @@ values
     -- 8
     ("בָּא בַּיָּמִים", "ba ba-yamim", "Come in Days", "Someone who lived for a lot of days - very old (from Genesis - the Bible)", "age", 5),
     -- 9
-    ("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripe old age", "at the right age", "age", 4),
+    ("Hinog na gulang", "Hi-nog na gu-lah-ng", "Ripened old age", "at the right age or matured", "age", 4),
     -- 10
     ("Be of the same mind", "bi ʌv ðə seɪm maɪnd", "Be of the same mind", "To have the same opinion", "opinion", 1),
     -- 11
@@ -90,7 +90,7 @@ values
 
 
 
-INSERT INTO links
+INSERT INTO Links
     (idiom1Id, idiom2Id, rating)
 VALUES
     -- 1
