@@ -6,6 +6,7 @@ body {
   background-image: url(../images/Unique_World_Map_d.jpg);
   font-family: 'Quicksand', sans-serif;
   
+  
 }
 #home_page_button{
   width: 40px;
@@ -18,31 +19,33 @@ body {
   width: 100%;
 }
 nav {
+background-image: url(../images/Unique_World_Map_d.jpg);
 height: 150px;
 position: fixed;
 
 }
-
-
+hr{
+margin-top: 1rem;
+margin-bottom: 1rem;
+border: 0;
+border-top: 8px solid rgb(0, 122, 134);
+}
 
 .langRow1 {
   position: relative;
   background-color: #cdf3f0;
   /* z-index: 2; */
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-radius: 5px;
   font-family: 'Nunito', sans-serif;
  color: rgb(75, 77, 77);
 }
 
-.langRow1 {
-
-}
 .catRow2 {
   font-family: 'Nunito', sans-serif;
   background-color:  #cdf3f0;
   border-radius: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   color: rgb(75, 77, 77);
 }
 
@@ -56,6 +59,21 @@ nav a {
 .link1 {
   
   color: aliceblue !important;
+}
+.column1{
+  left: 41px;
+  top: 12px;
+}
+
+.column2{
+  display: inline-flex;
+  left: -3px;
+  top: 46px;
+}
+.column3{
+  display: inline-flex;
+  left: 78px;
+  top: 86px;
 }
 .headTitle {
   color: white;
@@ -97,16 +115,16 @@ h3 {
   background: none;
   color: white;
   position: relative;
-  left: 390px;
-  top: -57px;
+  left: 410px;
+  top: -52px;
 }
 #copy_button{
   border: 0;
   background: none;
   color: white;
   position: relative;
-  left: 397px;
-  top: -50px;
+  left: 424px;
+  top: -46px;
 }
 
 /* .worldimg {
@@ -138,30 +156,15 @@ p {
   margin: 20px;
 }
 
-.column1{
-  left: 27px;
-}
-
-.column3{
-  display: inline-flex;
-  left: 71px;
-  top: 38px;
-}
-
-.column2{
-  display: inline-flex;
-  
-}
-
 footer {
-  background-color: #35acbd !important;
-  color: white;
+  background-color: #257884 !important;
+  color: white !important;
   width: 100%;
   position: fixed;
   bottom: 0px;
   text-align: center;
-  font-size: 8px;
-  font-family: "Playfair Display", serif;
+  font-size: 10px;
+  font-family: 'Nunito', sans-serif;
 }
 .wrapperBox1{
   width: 100%;
@@ -312,8 +315,9 @@ width: 100%;
       cursor: pointer;
       background-color: #fff; 
       border-bottom: 1px solid #d4d4d4; 
+      border-top: 1px solid #d4d4d4;
       width: 588px;
-      top: -67px;
+      top: -153px;
       display: inline-flex;
       position: relative;
       left: 15px;
@@ -471,6 +475,6 @@ width: 100%;
   display: table;
 }
 
-p {
+/* p {
   color: #15444b !important; 
-}
+} */
