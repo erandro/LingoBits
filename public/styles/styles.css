@@ -7,12 +7,13 @@ body {
   font-family: 'Quicksand', sans-serif;
   
 }
-#home_page_butto{
+#home_page_button{
   width: 40px;
   height: 30px;
   border-radius: 5px;
   color: #257884;
 }
+
 .navRow{
   width: 100%;
 }
@@ -21,11 +22,13 @@ height: 150px;
 position: fixed;
 
 }
+
+
+
 .langRow1 {
   position: relative;
   background-color: #cdf3f0;
-  z-index: -2;
-  /* opacity: 0.6; */
+  /* z-index: 2; */
   padding-bottom: 20px;
   border-radius: 5px;
   font-family: 'Nunito', sans-serif;
@@ -136,7 +139,7 @@ p {
 }
 
 .column1{
-  left: 62px;
+  left: 27px;
 }
 
 .column3{
@@ -216,8 +219,18 @@ footer {
 .addIdiom {
   background-color: #35acbd !important;
 }
+.mini_resRow {
+  width: 100%;
+}
 
+/* #multi_res_div{
+width: 100%;
 
+} */
+#multi_idiom_holder {
+  /* height: 70%;
+  width: 40%; */
+}
 
 
 

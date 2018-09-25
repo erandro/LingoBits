@@ -82,9 +82,31 @@ values
     -- 23
     ("Born with a silver spoon in one’s mouth", "Born with a silver spoon in one’s mouth ", "put a spoon made of silver in one's mouth", "Someone who comes from a wealthy and successful family", "rich", 1),
     -- 24
-    ("مولود فى فمه ملعقة من ذهب", "mawlood fee famohoo mal3qah men zahab", "to have a spoon made of gold in ones mouth", "Someone who comes from a wealthy and successful family", "obedience", 13),
+    ("مولود فى فمه ملعقة من ذهب", "mawlood fee famohoo mal3qah men zahab", "to have a spoon made of gold in ones mouth", "Someone who comes from a wealthy and successful family", "obedience", 13);
     -- 25
-    ("Huwag mong iyakan ang tumapon na gatas", "Hu-wag mong i-ya-kan a-ng tu-ma-pon nah ga-tas", "don't crying over spilled milk", "You cannot look back on something you cannot change", "regret", 4);
+    ("Buen Provecho", "boo-en pro-veh-chow", "Good Advantage", "Enjoy your food!", "Spanish", "food", 2),
+    --26
+    ("¡Qué bárbaro!", "kay bar-bar-o", "what barbarian", "How dare you? That's so uncivilized.  You should be ashamed!", "Spanish", "exclamation", 2),
+    --27
+    ("Estoy de acuerdo", "es-toy de akoo-er-doh", "I am agreement", "I'm with you. I agree.","Spanish", "expression", 2 ),
+    --28
+    ("Antier", "aun-tee-er", "The day before yesterday.", "Spanish", "expression", 2 ),
+    --29
+    ("Desvelado", "des-veh-la-do","to be tired all day from not sleeping all night","Spanish", "expression", 2 ),
+    --30
+    ("Friolente", "free-oh-len-te", "to be cold all the time, regardless of the temperature", "Spanish", "expression", 2 )
+
+
+
+Collapse 
+
+Jump
+Mark as read (esc)
+Message Input
+
+
+
+=======
 
 INSERT INTO Links
     (idiom1Id, idiom2Id, rating)
@@ -117,4 +139,7 @@ VALUES
     (10, 12, 0),
     -- 14
     (25, 1, 0);
-
+    -- 15
+    (27, 10, 0);
+     -- 16
+    (26, 5, 0);
