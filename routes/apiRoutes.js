@@ -186,7 +186,6 @@ module.exports = function (app) {
 
   //POST a new idiom linked to existing
   app.post("/api/idiom/:curIdiomId", function (req, res) {
-    console.log("boom");
     var curIdiomId = parseInt(req.params.curIdiomId);
     var newIdiom = req.body;
     db.Idiom.create(newIdiom)

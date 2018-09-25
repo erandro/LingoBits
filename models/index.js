@@ -17,7 +17,7 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     {
-      port: 8889,
+      port: 3306,
       dialect: 'mysql',
       logging: false,
       define: {
