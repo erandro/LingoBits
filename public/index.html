@@ -14,6 +14,7 @@
         crossorigin="anonymous">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito|Playfair+Display:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css">
 </head>
 
@@ -26,7 +27,7 @@
             <div class="row navRow">
                 <div class="col-sm-3 column1">
                     <div class="headTitle">
-                        <h1>LingoBits</h1>
+                        <img src="./images/logo_whitebackground.png" width="110px" height="110px">
                     </div>
                 </div>
                 <div class="col-sm-7 column2">
@@ -45,15 +46,17 @@
         </div>
     </nav>
     <br>
+    <br>
 
     <!-- Home Page -->
+
     <div id="home_page_div">
         <!-- Home Page - language -->
         <div class="container mb-5">
             <div class="row mb-10  langRow1">
                 <div class="col sm-md-12">
                     <div class="card-deck justify-content-center inputbox">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3 input_lang">
                             <select class="custom-select" id="search_language_input">
                             </select>
                             <div class="input-group-append">
@@ -91,6 +94,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Home Page - category -->
         <div class="container mb-5 catRow2">
@@ -141,7 +145,9 @@
                 <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
                     <div class="card-header">
                         <h3 class="card-title" id="idiom_card_name">test</h3>
-                        <button id="adding_button" data-id="" data-category="">got an equivalent idiom?</button>
+                        <button id="adding_button" data-id="" data-category=""><i class="fas fa-plus-circle fa-lg"
+                                aria-hidden="true"></i></button>
+                        <button id="copy_button" data-id="" data-category=""><i class="far fa-copy fa-2x" aria-hidden="true"></i></button>
                     </div>
 
                     <div class="card-body justify-content-center">
@@ -165,12 +171,16 @@
         </div>
     </div>
 
+
     <!-- Multiple Results Mini Cards -->
     <div class="" id="multi_res_div">
-        <div class="container justify-content-center">
-            <div class="row justify-content-center" id="multi_idiom_holder">
-
-            </div>
+        <div class="row justify-content-center mx-auto mini_resRow">
+            <div class="col-md-12 mx-auto miniCol1">
+                <div class="container justify-content-center mx-auto">
+                    <div class="" id="multi_idiom_holder">
+                    </div>
+                </div>
+           </div>
         </div>
     </div>
 
