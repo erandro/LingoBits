@@ -39,17 +39,16 @@ values
     ("Cry over spilled milk", "kray over spild milk", "Cry over spilled milk", "Express regret about something that has already happened or cannot be changed", "regret", 1),
     -- 2
     ("אֵין בּוֹכִים עַל חָלָב שֶׁנִּשְׁפַּךְ", "ein bo-chim al cha-lav she-nish-pach", "no crying over spilled milk", "You shouldnt be upset about something that has happened and is unchangeable anymore, like milk that has been spilled", "regret", 5),
-    ("Huwag mong iyakan ang tumapon na gatas", "Hu-wag mong i-ya-kan a-ng tu-ma-pon nah ga-tas", "don't crying over spilled milk", "You cannot look back on something you cannot change", "regret", 4),
     --  3
     ("Put to shame", "put tu sheim", "Put to shame", "to cause to suffer shame or disgrace", "shame", 1),
     -- 4
     ("הלְבִּין פְּנֵיו בָּרַבִּים", "helbin panav be-rabim", "Bleached his face in the present of many", "To insulted one's friend in the presence of others, making his face pale (white) with shame", "shame", 5),
     -- 5
-    ("Pahiya mo sya", "pah-hi-ya mo syah", "Put to shame", "to embarassed him", "shame", 4),
+    ("Pahiya mo sya", "pah-hi-ya mo syah", "Put to shame", "to embarass him", "shame", 4),
     --  6
-    ("מַטְבְּע לָשׁוֹן", "matbe-a lashon", "Tongue's coin, Language currency", "Phrase or an idiom", "phrase", 5),
-    --  7
-    ("Ripe old age", "raɪp oʊld eɪʤ", "Ripe old age", "A very old age", "age", 1),
+    ("מַטְבְּע לָשׁוֹן", "matbe-a lashon", "Tongue's coin, Language currency", "Phrase or an idiom", "phrase", 5,
+        --  7
+        ("Ripe old age", "raɪp oʊld eɪʤ", "Ripe old age", "A very old age", "age", 1),
     -- 8
     ("בָּא בַּיָּמִים", "ba ba-yamim", "Come in Days", "Someone who lived for a lot of days - very old (from Genesis - the Bible)", "age", 5),
     -- 9
@@ -82,7 +81,6 @@ values
     ("يلوى ذراعه", "Yalwy zeraoh", "twist someone's arm", "Force or coerce someone to do something against their will", "obedience", 13),
     -- 23
     ("Born with a silver spoon in one’s mouth", "Born with a silver spoon in one’s mouth ", "put a spoon made of silver in one's mouth", "Someone who comes from a wealthy and successful family", "rich", 1),
-
     -- 24
     ("مولود فى فمه ملعقة من ذهب", "mawlood fee famohoo mal3qah men zahab", "to have a spoon made of gold in ones mouth", "Someone who comes from a wealthy and successful family", "obedience", 13);
     -- 25
@@ -108,6 +106,7 @@ Message Input
 
 
 
+=======
 
 INSERT INTO Links
     (idiom1Id, idiom2Id, rating)
@@ -121,4 +120,26 @@ VALUES
     -- 4
     (22, 21, 0),
     -- 5
-    (24, 25, 0);
+    (24, 23, 0),
+    -- 6
+    (1, 2, 0),
+    -- 7
+    (4, 3, 0),
+    -- 8
+    (3, 5, 0),
+    -- 9
+    (7, 8, 0),
+    -- 10
+    (7, 9, 0),
+    -- 11
+    (1, 3, 0),
+    -- 12
+    (10, 11, 0),
+    -- 13
+    (10, 12, 0),
+    -- 14
+    (25, 1, 0);
+    -- 15
+    (27, 10, 0);
+     -- 16
+    (26, 5, 0);
