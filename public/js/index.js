@@ -368,7 +368,8 @@ $(document).ready(function () {
         data.forEach(function (element) {
           allCategories.push(element);
           searchCategoryImput.append(
-            `<option class="search_Category_input">
+            `<option class="search_Category_input"
+            data-name="${element}">
             ${element}
             </option>`
           );
@@ -453,13 +454,13 @@ $(document).ready(function () {
     });
     searchCategorySubmit.on("click", function (event) {
       event.preventDefault();
-      var category = searchCategoryImput;
+      var category = searchCategoryImput.find(":selected").data("name");
       $.ajax("/api/idiomsbyCategory/" + category, {
         type: "get"
       }).then(
-        function () {
-          hideAndShow(categoryDiv);
-          // do things to show the idioms by language on language card
+        function (data) {
+          hideAndShow(multiDiv);
+          showMutiSearchedIdioms(data)
         }
       );
     });
@@ -478,13 +479,13 @@ $(document).ready(function () {
     });
     searchLanguageSubmit.on("click", function (event) {
       event.preventDefault();
-      var language = searchLanguageImput;
+      var language = searchLanguageImput.find(":selected").data("id");
       $.ajax("/api/idiomsbyLanguage/" + language, {
         type: "get"
       }).then(
-        function () {
-          hideAndShow(languageDiv);
-          // do things to show the idioms by language on language card
+        function (data) {
+          hideAndShow(multiDiv);
+          showMutiSearchedIdioms(data)
         }
       );
     });
