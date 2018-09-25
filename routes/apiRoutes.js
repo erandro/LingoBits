@@ -141,7 +141,7 @@ module.exports = function (app) {
       attributes: ['category']
     })
       .then(function (idiomsdb) {
-       var foundCategories = [];
+        var foundCategories = [];
         for (idiom of idiomsdb) {
           var categoriesInIdiom = idiom.category.split(" ");
           for (category of categoriesInIdiom) {
@@ -186,6 +186,7 @@ module.exports = function (app) {
 
   //POST a new idiom linked to existing
   app.post("/api/idiom/:curIdiomId", function (req, res) {
+    console.log("boom");
     var curIdiomId = parseInt(req.params.curIdiomId);
     var newIdiom = req.body;
     db.Idiom.create(newIdiom)
