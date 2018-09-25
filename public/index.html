@@ -136,84 +136,113 @@
         </div>
     </div>
 
-    <!-- THE LANGUAGE_hex cards -->
-    <div class="container hideDiv" id="the_language_div">
-        <div class="row rowsHex">
-            <div class="col-xs-6 col-md-4">
-                <div class="containerHex hexText">
-                    <div class="centered">
+    <!-- Languages card -->
+    <div class="container justify-content-center hideDiv" id="the_language_div">
+        <div class="row justify-content-center">
+            <div class="col align-self-center card-deck justify-content-center">
+                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3 ">
+                    <div class="card-header">
                         <h1 class="card-title" id="OrigIdiom"></h1>
-                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p class="pronunciation"></p>
-                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p class="literalTrans"></p>
-                        <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p class="meaning"></p>
-                        <div class="container"></div>
-                        <h3 class="card-title" id="connections">Connections:</h3>
-                        <p class="card-title" id="connectionOne"></p>
-                        <p class="card-title" id="connectionTwo"></p>
-                        <p class="card-title" id="connectionThree"></p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- THE CATEGORY_hex cards -->
-    <div class="container hideDiv" id="the_category_div">
-        <div class="row rowsHex">
-            <div class="col-xs-6 col-md-4">
-                <div class="containerHex hexText">
-                    <div class="centered">
+                    <div class="card-body justify-content-center">
                         <p class="card-title" style="font-weight: bold">Pronunciation:</p>
                         <p class="pronunciation"></p>
                         <p class="card-text" style="font-weight: bold">Literal Translation:</p>
                         <p class="literalTrans"></p>
                         <p class="card-text" style="font-weight: bold">Meaning:</p>
                         <p class="meaning"></p>
-                        <div class="container"></div>
+                    </div>
+                    <div class="card-footer text-white card-body justify-content-left">
                         <h3 class="card-title" id="connections">Connections:</h3>
                         <p class="card-title" id="connectionOne">Hebrew</p>
                         <p class="card-title" id="connectionTwo">Arabic</p>
                         <p class="card-title" id="connectionThree">French</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- THE IDIOM CARD_hex cards -->
-    <div class="container hideDiv" id="the_idiom_div">
-        <div class="row rowsHex">
-            <div class="col-xs-6 col-md-4">
-                <div class="containerHex hexText">
-                    <div class="centered">
-                        <h1 class="card-title" id="OrigIdiom"></h1>
-                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
-                        <p class="pronunciation"></p>
-                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
-                        <p class="literalTrans"></p>
-                        <p class="card-text" style="font-weight: bold">Meaning:</p>
-                        <p class="meaning"></p>
-                        <div class="container"></div>
-                        <h3 class="card-title" id="connections">Connections:</h3>
-                        <p class="card-title" id="connectionOne"></p>
-                        <p class="card-title" id="connectionTwo"></p>
-                        <p class="card-title" id="connectionThree"></p>
+                    <div class="container">
+                        <h1></h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Category Card -->
+    <div class="container justify-content-center hideDiv" id="the_category_div">
+        <div class="row justify-content-center">
+            <div class="col align-self-center card-deck justify-content-center">
+                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
+                    <div class="card-header">
+                        <h1 class="card-title" id="OrigIdiom"></h1>
+                        <!-- <i class="fas fa-plus-circle fa-lg justify-content-right"></i> -->
+                    </div>
+
+                    <div class="card-body justify-content-center">
+                        <p class="card-title" style="font-weight: bold">Pronunciation:</p>
+                        <p class="pronunciation"></p>
+                        <p class="card-text" style="font-weight: bold">Literal Translation:</p>
+                        <p class="literalTrans"></p>
+                        <p class="card-text" style="font-weight: bold">Meaning:</p>
+                        <p class="meaning"></p>
+                    </div>
+                    <div class="card-footer text-white card-body justify-content-left">
+                        <h3 class="card-title" id="connections">Connections:</h3>
+                        <p class="card-title" id="connectionOne">Hebrew</p>
+                        <p class="card-title" id="connectionTwo">Arabic</p>
+                        <p class="card-title" id="connectionThree">French</p>
+                    </div>
+
+                    <div class="container">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Idiom Card -->
+    <div class="container justify-content-center hideDiv" id="the_idiom_div">
+        <div class="row justify-content-center">
+            <div class="col align-self-center card-deck justify-content-center">
+                <div class="resultCard card border-dark mb-3 card text-white text-center mb-3">
+                    <div class="card-header">
+                        <h3 class="card-title" id="idiom_card_name">test</h3>
+                        <button id="adding_button" data-id="" data-category=""><i class="fas fa-plus-circle fa-lg"
+                                aria-hidden="true"></i></button>
+                        <button id="copy_button" data-id="" data-category=""><i class="far fa-copy fa-2x" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div class="card-body justify-content-center">
+                        <p class="card-title">Pronunciation:</p>
+                        <p id="idiom_card_pronunciation"></p>
+                        <p class="card-text">Literal Translation:</p>
+                        <p id="idiom_card_literalTrans"></p>
+                        <p class="card-text">Meaning:</p>
+                        <p id="idiom_card_meaning"></p>
+                        <p class="card-title">Category:</p>
+                        <p id="idiom_card_category"></p>
+                        <img id="idiom_card_language" src="" alt="language marked by flag">
+                    </div>
+                    <div class="card-footer text-white card-body justify-content-left">
+                        <h3 class="card-title" id="connections">Connections:</h3>
+                        <p class="card-title" id="connectionOne">Hebrew</p>
+                        <p class="card-title" id="connectionTwo">Arabic</p>
+                        <p class="card-title" id="connectionThree">French</p>
+                    </div>
+                    <div class="container">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Multiple Results Mini Cards -->
     <div class="" id="multi_res_div">
         <div class="container justify-content-center">
             <div class="row justify-content-center" id="multi_idiom_holder">
-
-
-
             </div>
         </div>
     </div>
