@@ -85,7 +85,26 @@ values
 
     -- 24
     ("مولود فى فمه ملعقة من ذهب", "mawlood fee famohoo mal3qah men zahab", "to have a spoon made of gold in ones mouth", "Someone who comes from a wealthy and successful family", "obedience", 13);
+    -- 25
+    ("Buen Provecho", "boo-en pro-veh-chow", "Good Advantage", "Enjoy your food!", "Spanish", "food", 2),
+    --26
+    ("¡Qué bárbaro!", "kay bar-bar-o", "what barbarian", "How dare you? That's so uncivilized.  You should be ashamed!", "Spanish", "exclamation", 2),
+    --27
+    ("Estoy de acuerdo", "es-toy de akoo-er-doh", "I am agreement", "I'm with you. I agree.","Spanish", "expression", 2 ),
+    --28
+    ("Antier", "aun-tee-er", "The day before yesterday.", "Spanish", "expression", 2 ),
+    --29
+    ("Desvelado", "des-veh-la-do","to be tired all day from not sleeping all night","Spanish", "expression", 2 ),
+    --30
+    ("Friolente", "free-oh-len-te", "to be cold all the time, regardless of the temperature", "Spanish", "expression", 2 )
 
+
+
+Collapse 
+
+Jump
+Mark as read (esc)
+Message Input
 
 
 
